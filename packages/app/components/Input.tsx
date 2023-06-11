@@ -61,7 +61,7 @@ export const Input = (props: IInputProps) => {
   const borderColor = useMemo(() => {
     if (!!errorMessage) return 'border-danger'
     if (isFocus) return 'border-info'
-    return 'border-muted'
+    return 'border-[#555]'
   }, [isFocus, errorMessage])
 
   return (
@@ -106,9 +106,7 @@ export const Input = (props: IInputProps) => {
           autoCapitalize="none"
         />
       </View>
-      {!!errorMessage && (
       <ErrorMessage text={errorMessage} />
-      )}
     </View>
   )
 }
