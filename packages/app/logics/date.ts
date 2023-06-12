@@ -10,8 +10,16 @@ export const getDateTimestamp = (date?: Date | number) => {
   return d(date).valueOf()
 }
 
-export const getThaiYear = (dateTimestamp: number) => {
+export const getThaiYear = (dateTimestamp?: number) => {
   return (+d(dateTimestamp).format('YYYY')) + 543
+}
+
+export const getThaiMonth = (dateTimestamp?: number) => {
+  return d(dateTimestamp).format('MMMM')
+}
+
+export const getThaiDay = (dateTimestamp?: number) => {
+  return d(dateTimestamp).format('D')
 }
 
 export const getFullDate = (dateTimestamp: number, emptyText?: string) => {
@@ -37,3 +45,16 @@ export const getDateFromDateTimestamp = (dateTimestamp: number) => {
 export const getStartDayDateTimestamp = (dateTimestamp?: number) => d(dateTimestamp).startOf('day').valueOf()
 
 export const getEndDayDateTimestamp = (dateTimestamp?: number) => d(dateTimestamp).endOf('day').valueOf()
+
+export const getYearList = () => {
+  const currentYear = getThaiYear()
+  let years: number[] = []
+  for (let i = currentYear - 100; i < currentYear + 100; i++) {
+    years.push(i)
+  }
+  return years
+}
+
+export const getDayList = () => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
+
+export const getMonthList = () => ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม']

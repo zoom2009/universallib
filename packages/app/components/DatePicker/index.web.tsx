@@ -82,7 +82,7 @@ export const DatePicker = (props: IDatePickerProps) => {
           errorMessage={errorMessage}
           label={label}
           required={required}
-          onChangeEffect={console.log}
+          onChangeEffect={() => {}}
           value={inputValue}
           placeholder={placeholder}
           bold={bold}

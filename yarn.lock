@@ -2874,6 +2874,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/datetimepicker@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "@react-native-community/datetimepicker@npm:7.1.0"
+  dependencies:
+    invariant: ^2.2.4
+  checksum: c88d19213daec1dc5c6101ad8c694386d79167087e1058c44c2699585dc97c4630c18de214d0607a5e5acd84846a9bb1401fece04fa78b8a010a0290b715040d
+  languageName: node
+  linkType: hard
+
+"@react-native-picker/picker@npm:^2.4.10":
+  version: 2.4.10
+  resolution: "@react-native-picker/picker@npm:2.4.10"
+  peerDependencies:
+    react: ">=16"
+    react-native: ">=0.57"
+  checksum: 905631e60ffb1aa3f6b378dc03cf2b6736487258f21d74145181185f225937b870ba1cec9f3e6deed1615ecb05e7cfd6b7b33082f169b811eed57ca6c64980d5
+  languageName: node
+  linkType: hard
+
 "@react-native/assets@npm:1.0.0":
   version: 1.0.0
   resolution: "@react-native/assets@npm:1.0.0"
@@ -6032,6 +6051,8 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.0
     "@babel/plugin-proposal-export-namespace-from": ^7.18.9
+    "@react-native-community/datetimepicker": ^7.1.0
+    "@react-native-picker/picker": ^2.4.10
     "@types/react": ~18.0.27
     "@types/react-native": ~0.69.1
     app: "*"
@@ -6044,6 +6065,7 @@ __metadata:
     react-dom: 18.2.0
     react-native: 0.71.4
     react-native-gesture-handler: ~2.9.0
+    react-native-raw-bottom-sheet: ^2.2.0
     react-native-reanimated: 3.0.2
     react-native-safe-area-context: 4.5.0
     react-native-screens: ~3.20.0
@@ -11035,6 +11057,13 @@ __metadata:
   version: 0.71.17
   resolution: "react-native-gradle-plugin@npm:0.71.17"
   checksum: 5ff996bafc3959a36551dc34d481cefb070ede4025b5eb2ce659f51adf74ba0e6845cc019ea1d547e0b4007f1c3c68146fa719688f09bde308f25320c6c6f834
+  languageName: node
+  linkType: hard
+
+"react-native-raw-bottom-sheet@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "react-native-raw-bottom-sheet@npm:2.2.0"
+  checksum: a42b2edcf6ee0e4d3fe1b06e81b7db424d3ba7f57658a4f280815db9c5cb9690802061ed6802d2e0d3064d6c34773233e66c3dccc1bd929c2aad27bbf30f4dac
   languageName: node
   linkType: hard
 
