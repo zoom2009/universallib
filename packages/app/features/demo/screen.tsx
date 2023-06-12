@@ -1,19 +1,22 @@
 import { Button } from "app/components/Button"
 import { CheckBox } from "app/components/CheckBox"
-import { ScrollView, View } from "app/components/ComponentWithTailwind"
+import { ScrollView, Text, View } from "app/components/ComponentWithTailwind"
+import { DatePicker } from "app/components/DatePicker"
 import { Dropdown } from "app/components/Dropdown"
 import { Icon } from "app/components/Icon"
 import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
 import theme from "app/global/theme"
+import { getDateTimestamp } from "app/logics/date"
 
 export const DemoScreen = () => {
   return (
-    <View className="bg-info-background flex flex-1 flex-col item-center px-[5%] py-10">
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+    <View className="bg-info-background flex flex-1 flex-col item-center">
+      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingTop: 30, paddingBottom: 100, paddingHorizontal: '5%' }}>
         <Label required bold>
           This is Label
         </Label>
+        <View className="h-8" />
         <Button
           onPress={() => {}}
           type="danger-outline"
@@ -51,6 +54,14 @@ export const DemoScreen = () => {
           value=""
           bold
           placeholder="Incididunt ullamco eu sunt exercitation pariatur deserunt tempor dolor."
+        />
+        <View className="h-8" />
+        <Input
+          onChangeEffect={console.log}
+          value="HI MOM, Ea deserunt minim adipisicing do adipisicing et anim. Proident pariatur dolore qui ut culpa dolore. PloreCillum cillum adipisicing aliqua commodo nostrud minim commodo. HI MOM, Ea deserunt minim adipisicing do adipisicing et anim. Proident pariatur dolore qui ut culpa dolore. PloreCillum cillum adipisicing aliqua commodo nostrud minim commodo"
+          bold
+          errorMessage="so sad you got some error message."
+          RightIcon={<Icon.GameController size={24} color="red" />}
         />
         <View className="h-8" />
         <CheckBox
@@ -117,6 +128,16 @@ export const DemoScreen = () => {
             { key:'6', value: 'Diary Products' },
             { key:'7', value: 'Drinks' },
           ]}
+        />
+        <View className="h-8" />
+        <DatePicker
+          onChangeEffect={console.log}
+          value={getDateTimestamp()}
+          placeholder="select date"
+          label="Date Picker"
+          bold
+          required
+          errorMessage="Ea nostrud ullamco ex id."
         />
       </ScrollView>
     </View>

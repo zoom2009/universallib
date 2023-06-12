@@ -16,12 +16,10 @@ type TextProps = ComponentProps<typeof DefaultText> & { bold?: boolean }
 const __Text = (props: TextProps) => (
   <DefaultText
     {...props}
-    style={{
-      fontWeight: props.bold ? 'bold' : 'normal',
-      ...props.style as any,
-    }}
+    style={[props.style, props.bold && { fontWeight: 'bold' }]}
   />
 )
+
 export const Text = memo(__Text)
 export const View = styled(_View)
 export const TouchableOpacity = styled(_TouchableOpacity)

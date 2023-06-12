@@ -1,5 +1,5 @@
 import { KeyboardTypeOptions } from 'react-native'
-import { useMemo, useState } from 'react'
+import { ReactNode, useMemo, useState } from 'react'
 import clsx from 'clsx'
 import { View } from 'app/components/ComponentWithTailwind'
 import { TextInput } from 'app/components/ComponentWithTailwind'
@@ -23,6 +23,7 @@ interface IInputProps {
   onFocus?: () => void
   onBlur?: () => void
   textColor?: string
+  RightIcon?: ReactNode
 }
 
 export const Input = (props: IInputProps) => {
@@ -43,6 +44,7 @@ export const Input = (props: IInputProps) => {
     onFocus,
     onBlur,
     textColor,
+    RightIcon,
   } = props
 
   const [isFocus, setIsFocus] = useState(false)
@@ -104,6 +106,11 @@ export const Input = (props: IInputProps) => {
           placeholderTextColor="#999"
           autoCapitalize="none"
         />
+        {!!RightIcon && (
+          <View className="pr-4">
+            {RightIcon}
+          </View>
+        )}
       </View>
       <ErrorMessage text={errorMessage} />
     </View>

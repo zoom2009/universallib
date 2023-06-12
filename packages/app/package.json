@@ -5,6 +5,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
+    "dayjs": "^1.11.8",
     "moti": "latest",
     "nativewind": "2.0.9",
     "react-native-dropdown-select-list": "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git",
