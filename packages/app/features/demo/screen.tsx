@@ -13,9 +13,26 @@ export const DemoScreen = () => {
   return (
     <View className="bg-info-background flex flex-1 flex-col item-center">
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingTop: 30, paddingBottom: 100, paddingHorizontal: '5%' }}>
-        <Label required bold>
-          This is Label
+        <Label>
+          This is Label 1
         </Label>
+        <Label required>
+          This is Label 2
+        </Label>
+        <Label bold>
+          This is Label 3
+        </Label>
+        <Label required bold>
+          This is Label 4
+        </Label>
+        <Text bold className="mt-10 text-xl text-primary">Many Icons Out there!</Text>
+        <View className="flex flex-row p-4">
+          <Icon.Phone size={40} color={theme.colors.warning} />
+          <Icon.Activity size={40} color={theme.colors.primary} />
+          <Icon.Baby weight="bold" size={40} color={theme.colors.success} />
+          <Icon.Airplane weight="thin" size={40} color={theme.colors.danger} />
+          <Icon.Image weight="fill" size={40} color={theme.colors.info} />
+        </View>
         <View className="h-8" />
         <Button
           onPress={() => {}}
@@ -62,6 +79,16 @@ export const DemoScreen = () => {
           bold
           errorMessage="so sad you got some error message."
           RightIcon={<Icon.GameController size={24} color="red" />}
+        />
+        <View className="h-8" />
+        <Input
+          label="Hi I'm Text Area"
+          isTextArea
+          onChangeEffect={console.log}
+          value=""
+          bold
+          required
+          placeholder="this text area"
         />
         <View className="h-8" />
         <CheckBox
