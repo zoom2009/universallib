@@ -7,6 +7,7 @@
     "@react-navigation/native-stack": "^6.5.0",
     "moti": "latest",
     "nativewind": "2.0.9",
+    "react-native-dropdown-select-list": "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git",
     "solito": "3.0.0"
   },
   "sideEffects": false

@@ -1,11 +1,10 @@
 import { KeyboardTypeOptions } from 'react-native'
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import clsx from 'clsx'
 import { View } from 'app/components/ComponentWithTailwind'
 import { TextInput } from 'app/components/ComponentWithTailwind'
 import { Label } from 'app/components/Label'
 import { ErrorMessage } from 'app/components/ErrorMessage'
-import theme from 'app/global/theme'
 
 interface IInputProps {
   label?: string
@@ -102,7 +101,7 @@ export const Input = (props: IInputProps) => {
           textContentType="none"
           numberOfLines={isTextArea ? numberOfLines : undefined}
           autoCorrect={false}
-          placeholderTextColor={theme.colors.muted}
+          placeholderTextColor="#999"
           autoCapitalize="none"
         />
       </View>
