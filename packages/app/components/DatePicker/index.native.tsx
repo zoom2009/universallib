@@ -1,4 +1,4 @@
-import { Picker, DatePicker as DatePickerWheel } from 'react-native-wheel-pick'
+import { Picker } from 'react-native-wheel-pick'
 import { Text, TouchableOpacity, View } from 'app/components/ComponentWithTailwind'
 import { getDateTimestamp, getDayList, getFullDate, getMonthList, getThaiDay, getThaiMonth, getThaiYear, getYearList, _day } from 'app/logics/date'
 import { useMemo, useRef, useState } from 'react'
