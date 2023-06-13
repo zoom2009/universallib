@@ -7,11 +7,13 @@ import { Dropdown } from "app/components/Dropdown"
 import { Icon } from "app/components/Icon"
 import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
+import { Toast } from "app/components/Toast"
 import theme from "app/global/theme"
 import { getDateTimestamp } from "app/logics/date"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 export const DemoScreen = () => {
+  const toastRef: any = useRef(null)
   const [isShowAlert, setIsShowAlert] = useState(false)
 
   return (
@@ -29,6 +31,7 @@ export const DemoScreen = () => {
         onCancelPressed={() => setIsShowAlert(false)}
         onConfirmPressed={() => setIsShowAlert(false)}
       />
+      <Toast ref={toastRef} />
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingTop: 30, paddingBottom: 100, paddingHorizontal: '5%' }}>
         <Label>
           This is Label 1
@@ -80,6 +83,13 @@ export const DemoScreen = () => {
           onPress={() => setIsShowAlert(true)}
           type="success"
           text="Show Alert"
+          bold
+        />
+        <View className="h-8" />
+        <Button
+          onPress={() => toastRef.current.show('Hello')}
+          type="info"
+          text="Show Toast"
           bold
         />
         <View className="h-8" />

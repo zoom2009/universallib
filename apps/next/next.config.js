@@ -19,6 +19,7 @@ const nextConfig = {
     'react-native-gesture-handler',
     'react-native-dropdown-select-list',
     'react-native-awesome-alerts',
+    'react-native-toast-notifications',
   ],
 }
 
