@@ -12,7 +12,6 @@ const nextConfig = {
     'react-native',
     'react-native-web',
     'solito',
-    'moti',
     'app',
     'react-native-reanimated',
     'nativewind',

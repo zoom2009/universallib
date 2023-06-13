@@ -1,7 +1,8 @@
+import { Accordion } from "app/components/Accordion"
 import { Alert } from "app/components/Alert"
 import { Button } from "app/components/Button"
 import { CheckBox } from "app/components/CheckBox"
-import { ScrollView, Text, View } from "app/components/ComponentWithTailwind"
+import { ScrollView, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
 import { DatePicker } from "app/components/DatePicker"
 import { Dropdown } from "app/components/Dropdown"
 import { Icon } from "app/components/Icon"
@@ -16,6 +17,7 @@ import { useRef, useState } from "react"
 export const DemoScreen = () => {
   const toastRef: any = useRef(null)
   const [isShowAlert, setIsShowAlert] = useState(false)
+  const [isShowAccordion, setIsShowAccordion] = useState(false)
 
   return (
     <View className="bg-info-background flex flex-1 flex-col item-center">
@@ -208,6 +210,14 @@ export const DemoScreen = () => {
           required
           errorMessage="Ea nostrud ullamco ex id."
         />
+        <View className="h-8" />
+        <TouchableOpacity onPress={() => setIsShowAccordion(prev => !prev)}>
+          <Text bold className="text-primary text-xl">Toggle Text</Text>
+        </TouchableOpacity>
+        <View className="h-4" />
+        <Accordion isOpen={isShowAccordion} duration={0.25}>
+          <Text>Excepteur dolor sint deserunt nulla. Officia anim culpa pariatur exercitation esse Lorem occaecat velit irure laboris excepteur. Nisi laborum adipisicing incididunt dolore elit ex voluptate amet. Excepteur dolore ad Lorem non sint quis esse id sint mollit aute. Do dolore anim laborum reprehenderit. Labore exercitation velit officia tempor non aliqua excepteur id nostrud aute do exercitation laboris laboris. Nostrud irure qui duis velit amet aliquip officia est qui nostrud. Aliqua duis excepteur deserunt adipisicing aute et tempor velit sit deserunt labore velit duis consectetur. Incididunt laborum minim aliquip fugiat sunt officia nostrud in quis deserunt pariatur. Adipisicing pariatur non nostrud duis. Esse eiusmod Lorem sint minim eu adipisicing do enim sit proident. Excepteur sunt ipsum sint ex fugiat. Adipisicing sint excepteur deserunt nisi do.</Text>
+        </Accordion>
       </ScrollView>
     </View>
   )
