@@ -1,12 +1,35 @@
 {
   "expo": {
-    "name": "solito-nativewind",
-    "slug": "solito-nativewind",
+    "name": "universallib",
+    "slug": "universallib",
     "version": "1.0.0",
-    "scheme": "solito-nativewind",
-    "platforms": ["ios", "android"],
+    "scheme": "universallib",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "ios": {
-      "bundleIdentifier": "com.solito.nativewind"
+      "bundleIdentifier": "com.zoom2009.universallib"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends.",
+          "cameraPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ],
+    "android": {
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.zoom2009.universallib"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "59ee7034-71e0-4efd-9241-295a0f51b91e"
+      }
     }
   }
 }

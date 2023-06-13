@@ -1,5 +1,5 @@
 {
-  "name": "solito-with-tailwind",
+  "name": "universallib",
   "private": true,
   "workspaces": [
     "apps/*",

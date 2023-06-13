@@ -5,6 +5,7 @@ import { ScrollView, Text, View } from "app/components/ComponentWithTailwind"
 import { DatePicker } from "app/components/DatePicker"
 import { Dropdown } from "app/components/Dropdown"
 import { Icon } from "app/components/Icon"
+import { ImagePicker } from "app/components/ImagePicker"
 import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
 import { Toast } from "app/components/Toast"
@@ -87,10 +88,17 @@ export const DemoScreen = () => {
         />
         <View className="h-8" />
         <Button
-          onPress={() => toastRef.current.show('Hello')}
+          onPress={() => toastRef.current.show('Hello This is Toast')}
           type="info"
           text="Show Toast"
           bold
+        />
+        <View className="h-8" />
+        <ImagePicker
+          onChangeEffect={console.log}
+          value={[]}
+          multiple
+          quality={4}
         />
         <View className="h-8" />
         <Input
