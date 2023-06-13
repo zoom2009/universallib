@@ -18,6 +18,7 @@ const nextConfig = {
     'nativewind',
     'react-native-gesture-handler',
     'react-native-dropdown-select-list',
+    'react-native-awesome-alerts',
   ],
 }
 

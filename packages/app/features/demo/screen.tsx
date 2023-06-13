@@ -1,3 +1,4 @@
+import { Alert } from "app/components/Alert"
 import { Button } from "app/components/Button"
 import { CheckBox } from "app/components/CheckBox"
 import { ScrollView, Text, View } from "app/components/ComponentWithTailwind"
@@ -8,10 +9,26 @@ import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
 import theme from "app/global/theme"
 import { getDateTimestamp } from "app/logics/date"
+import { useState } from "react"
 
 export const DemoScreen = () => {
+  const [isShowAlert, setIsShowAlert] = useState(false)
+
   return (
     <View className="bg-info-background flex flex-1 flex-col item-center">
+      <Alert
+        show={isShowAlert}
+        title="Hi Alert"
+        message="Nostrud laborum aute consectetur nostrud deserunt est enim ullamco eiusmod."
+        closeOnTouchOutside
+        closeOnHardwareBackPress
+        showCancelButton
+        showConfirmButton
+        confirmText="OK"
+        cancelText="CLOSE"
+        onCancelPressed={() => setIsShowAlert(false)}
+        onConfirmPressed={() => setIsShowAlert(false)}
+      />
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingTop: 30, paddingBottom: 100, paddingHorizontal: '5%' }}>
         <Label>
           This is Label 1
@@ -57,6 +74,13 @@ export const DemoScreen = () => {
           text="Full Info Button"
           bold
           isFull
+        />
+        <View className="h-8" />
+        <Button
+          onPress={() => setIsShowAlert(true)}
+          type="success"
+          text="Show Alert"
+          bold
         />
         <View className="h-8" />
         <Input

@@ -3551,6 +3551,7 @@ __metadata:
     dayjs: ^1.11.8
     moti: latest
     nativewind: 2.0.9
+    react-native-awesome-alerts: ^2.0.0
     react-native-dropdown-select-list: "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git"
     solito: 3.0.0
   languageName: unknown
@@ -11015,6 +11016,15 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
+"react-native-awesome-alerts@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "react-native-awesome-alerts@npm:2.0.0"
+  dependencies:
+    prop-types: ^15.7.2
+  checksum: 3c52c121dcc8d7df5d453233c92f413a2422e8a0165be33c9727a9874926e1b344e5afcdfee00cd857e2497af9ef922bbe7129870e521826ec065b9314b00325
   languageName: node
   linkType: hard
 
