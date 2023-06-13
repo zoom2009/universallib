@@ -60,6 +60,7 @@ export const ImagePicker = (props: IImagePickerProps) => {
       text={text}
       type="primary-outline"
       onPress={pickImage}
+      bold
     />
   )
 }
