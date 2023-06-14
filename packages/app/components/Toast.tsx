@@ -1,34 +1,18 @@
-import { forwardRef } from 'react'
-import _Toast, { ToastType } from 'react-native-toast-notifications'
-import { View } from 'app/components/ComponentWithTailwind'
+import { Platform } from 'react-native'
+import { ToastContainer } from 'react-toast'
+import React from 'react'
 
-export const Toast = forwardRef((props: any, ref) => (
-  <View
-    pointerEvents="none"
-    className="fixed w-full z-50 top-0 right-0 left-0 bottom-0"
-  >
-    <_Toast
-      {...props}
-      ref={ref as any}
-    />
-  </View>
-))
+interface IToastRootProviderProps {
+  children: React.ReactNode
+}
 
-/*
-  Example:
-  const toastRef = useRef()
-
-  const show = () => {
-    toastRef.current.show('Hello World', {
-      type: "normal | success | warning | danger | custom",
-      placement: "top | bottom",
-      duration: 4000,
-      offset: 30,
-      animationType: "slide-in | zoom-in",
-    })
-  }
-
-  return (
-    <Toast ref={(ref) => global['toast'] = ref} />
+export const ToastRootProvider = (props: IToastRootProviderProps) => {
+  if (Platform.OS === 'web') return (
+    <>
+      {props.children}
+      <ToastContainer />
+    </>
   )
-*/
+
+  return <>{props.children}</>
+}

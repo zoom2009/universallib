@@ -11,13 +11,13 @@ import { ImagePicker } from "app/components/ImagePicker"
 import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
 import { MapPicker } from "app/components/MapPicker"
-import { Toast } from "app/components/Toast"
+import { ToastRootProvider } from "app/components/Toast"
+import { displayToast } from "app/functions/displayToast"
 import theme from "app/global/theme"
 import { getDateTimestamp } from "app/logics/date"
-import { useRef, useState } from "react"
+import { useState } from "react"
 
-export const DemoScreen = () => {
-  const toastRef: any = useRef(null)
+const _DemoScreen = () => {
   const [isShowAlert, setIsShowAlert] = useState(false)
   const [isShowAccordion, setIsShowAccordion] = useState(false)
   const [isShowCamera, setIsShowCamera] = useState(false)
@@ -42,7 +42,6 @@ export const DemoScreen = () => {
         onCancelPressed={() => setIsShowAlert(false)}
         onConfirmPressed={() => setIsShowAlert(false)}
       />
-      <Toast ref={toastRef} />
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingTop: 30, paddingBottom: 100, paddingHorizontal: '5%' }}>
         <Label>
           This is Label 1
@@ -66,7 +65,7 @@ export const DemoScreen = () => {
         </View>
         <View className="h-8" />
         <TouchableOpacity className="flex flex-row items-end" onPress={() => setIsShowAccordion(prev => !prev)}>
-          <Text bold className="text-primary text-xl pr-2">Toggle Text</Text>
+          <Text bold className="text-primary text-xl pr-2">(Accordion) {!isShowAccordion ? 'Show More Text' : 'Hide Text'}</Text>
           {!isShowAccordion
             ? <Icon.CaretDown size={24} weight="bold" color={theme.colors.primary} />
             : <Icon.CaretUp size={24} weight="bold" color={theme.colors.primary} />
@@ -110,8 +109,8 @@ export const DemoScreen = () => {
         />
         <View className="h-8" />
         <Button
-          onPress={() => toastRef.current.show('Hello This is Toast')}
-          type="info"
+          onPress={() => displayToast({ message: 'This is Toast', type: 'info' })}
+          type="danger"
           text="Show Toast"
           bold
         />
@@ -279,3 +278,9 @@ export const DemoScreen = () => {
     </View>
   )
 }
+
+export const DemoScreen = () => (
+  <ToastRootProvider>
+    <_DemoScreen />
+  </ToastRootProvider>
+)
