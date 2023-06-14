@@ -266,7 +266,6 @@ export const DemoScreen = () => {
           required
           errorMessage="Ea nostrud ullamco ex id."
         />
-        <View className="h-8" />
         <MapPicker
           defaultLocation={{
             lat: 13.736717,
