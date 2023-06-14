@@ -56,10 +56,8 @@ export const MapPicker = (props: IMapPickerProps) => {
     onChangeEffect && onChangeEffect({ lat, lng })
   }
 
-  const typeRef = useRef({})
   const onTypeLocation = (type: 'lat' | 'lng') => (value: string) => {
-    if (typeRef.current) clearTimeout(typeRef.current as any)
-    typeRef.current = setTimeout(() => {
+    if (!isEmpty(value)) {
       if (type === 'lat') {
         const v = { lat: +value, lng: +(typeLng || 0) }
         setTypeLat(value)
@@ -73,8 +71,10 @@ export const MapPicker = (props: IMapPickerProps) => {
         setMarker(v)
         onChangeEffect && onChangeEffect(v)
       }
-    }, 1000)
+    }
   }
+
+  const transformOnChangeLocationText = (text: string) => text.replace(/[^0-9.]/g, '')
 
   useEffect(() => {
     if (value) {
@@ -90,37 +90,21 @@ export const MapPicker = (props: IMapPickerProps) => {
       <View className="flex flex-1 flex-row items-center flex-wrap">
         <View className="flex flex-1">
           <Input
-            // value={typeLat}
-            value=""
+            value={typeLat}
             label="ละติจูด"
             placeholder="ระบุละติจูด"
-            isMask
-            maskType="currency"
-            maskString="9999"
-            maskOptions={{
-              decimalSeparator: '.',
-              precision: 2,
-            }}
-            onChangeEffect={console.log}
-            // onChangeEffect={onTypeLocation('lat')}
+            transformOnChange={transformOnChangeLocationText}
+            onChangeEffect={onTypeLocation('lat')}
           />
         </View>
         <View className="w-4" />
         <View className="flex flex-1">
           <Input
-            // value={typeLng}
-            value=""
+            value={typeLng}
             label="ลองติจูด"
             placeholder="ระบุลองติจูด"
-            isMask
-            maskType="currency"
-            maskString="9999"
-            maskOptions={{
-              decimalSeparator: '.',
-              precision: 2,
-            }}
-            onChangeEffect={console.log}
-            // onChangeEffect={onTypeLocation('lng')}
+            transformOnChange={transformOnChangeLocationText}
+            onChangeEffect={onTypeLocation('lng')}
           />
         </View>
       </View>

@@ -30,6 +30,7 @@ interface IInputProps {
   onBlur?: () => void
   textColor?: string
   RightIcon?: ReactNode
+  transformOnChange?: (text: string) => string
   /** look how to use options here doc => https://github.com/akinncar/react-native-mask-text */
   isMask?: boolean
   /** look how to use options here doc => https://github.com/akinncar/react-native-mask-text */
@@ -58,6 +59,7 @@ export const Input = (props: IInputProps) => {
     onFocus,
     onBlur,
     textColor,
+    transformOnChange,
     RightIcon,
     isMask = false,
     maskType,
@@ -89,6 +91,15 @@ export const Input = (props: IInputProps) => {
     ? {}
     : { mask: maskString, options: maskOptions, type: maskType }
 
+  const onChangeText = (text: string) => {
+    if (!transformOnChange) {
+      onChangeEffect(text)
+    } else {
+      const transformedText = transformOnChange(text)
+      onChangeEffect(transformedText)
+    }
+  }
+  
   return (
     <View className="w-full">
       {label && (
@@ -120,7 +131,7 @@ export const Input = (props: IInputProps) => {
           value={value}
           onFocus={onFocusFunction}
           onBlur={onBlurFunction}
-          onChangeText={onChangeEffect}
+          onChangeText={onChangeText}
           multiline={isTextArea}
           secureTextEntry={isPassword}
           placeholder={placeholder}
