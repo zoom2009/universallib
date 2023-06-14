@@ -2206,6 +2206,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@googlemaps/js-api-loader@npm:1.15.1":
+  version: 1.15.1
+  resolution: "@googlemaps/js-api-loader@npm:1.15.1"
+  dependencies:
+    fast-deep-equal: ^3.1.3
+  checksum: 0f359c6703116eee926afcf044be419358aee0c34d597c394f5b543ab8b6fb19a90a631f9bcb22e457605edfa08b5f6a29856149e63c4c9305be848d913ec013
+  languageName: node
+  linkType: hard
+
+"@googlemaps/markerclusterer@npm:2.0.15":
+  version: 2.0.15
+  resolution: "@googlemaps/markerclusterer@npm:2.0.15"
+  dependencies:
+    fast-deep-equal: ^3.1.3
+    supercluster: ^7.1.3
+  checksum: bb3201212fe4e0d18a22979ad1aaf9796f958ddb5e2a8bc3aa4d2666ce8e81d70d05ebca7c1d8c85027775678d825408795ff34d925316f244e027dee9b0a883
+  languageName: node
+  linkType: hard
+
 "@graphql-typed-document-node/core@npm:^3.1.0":
   version: 3.2.0
   resolution: "@graphql-typed-document-node/core@npm:3.2.0"
@@ -2626,6 +2645,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-google-maps/api@npm:^2.18.1":
+  version: 2.18.1
+  resolution: "@react-google-maps/api@npm:2.18.1"
+  dependencies:
+    "@googlemaps/js-api-loader": 1.15.1
+    "@googlemaps/markerclusterer": 2.0.15
+    "@react-google-maps/infobox": 2.16.0
+    "@react-google-maps/marker-clusterer": 2.16.1
+    "@types/google.maps": 3.50.5
+    invariant: 2.2.4
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18
+    react-dom: ^16.8 || ^17 || ^18
+  checksum: ad665f8ce617615bdb5a92c14867a8796b9f86be6fafc7aa6685510b5618fc5e80ea3f0b0a92fcdea75662aefacc63b1cd69a98928f43b8d2af23894e8b33470
+  languageName: node
+  linkType: hard
+
+"@react-google-maps/infobox@npm:2.16.0":
+  version: 2.16.0
+  resolution: "@react-google-maps/infobox@npm:2.16.0"
+  checksum: ce2532d760f56d0eef99be38fda4867efffde31ee0ba9a27f4264e54bfce90d2034664f67c17a7fa11465b516f3c91f94e6d42f3bc7b7582e139b0b04fd16e0d
+  languageName: node
+  linkType: hard
+
+"@react-google-maps/marker-clusterer@npm:2.16.1":
+  version: 2.16.1
+  resolution: "@react-google-maps/marker-clusterer@npm:2.16.1"
+  checksum: 2b65cbe34b1e52c90bb0b175774e4296896064749b05a53344b21fd8c029d35228e0ea338bcefec97cc511505cc8b9b8ba579862b3ddd915c5f7260697509e27
+  languageName: node
+  linkType: hard
+
 "@react-native-community/cli-clean@npm:^10.1.1":
   version: 10.1.1
   resolution: "@react-native-community/cli-clean@npm:10.1.1"
@@ -3037,6 +3087,20 @@ __metadata:
     url-parse: ^1.1.7
     webfontloader: ^1.6.27
   checksum: c99791af17602649d6ef6dd1884a02c2d1e8b3ac3f6ca1fc3bae4a7d7e885129a5519df2fd25306b0502ed1f50b1e741ba543646af06285f0c8e322765f3e915
+  languageName: node
+  linkType: hard
+
+"@types/geojson@npm:^7946.0.8":
+  version: 7946.0.10
+  resolution: "@types/geojson@npm:7946.0.10"
+  checksum: 12c407c2dc93ecb26c08af533ee732f1506a9b29456616ba7ba1d525df96206c28ddf44a528f6a5415d7d22893e9d967420940a9c095ee5e539c1eba5fefc1f4
+  languageName: node
+  linkType: hard
+
+"@types/google.maps@npm:3.50.5":
+  version: 3.50.5
+  resolution: "@types/google.maps@npm:3.50.5"
+  checksum: 1754518ffc1719c2086834ee1cab45b4a2a0ec007f3d1101d46afda46d7ef96a989ab977333352a1c73c5267ce2e7bec7e5bfeb74146a723be746279c3ad086c
   languageName: node
   linkType: hard
 
@@ -3506,6 +3570,7 @@ __metadata:
     nativewind: 2.0.9
     react-native-awesome-alerts: ^2.0.0
     react-native-dropdown-select-list: "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git"
+    react-native-mask-text: ^0.14.1
     react-native-toast-notifications: ^3.3.1
     solito: 3.0.0
   languageName: unknown
@@ -3944,16 +4009,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-runtime@npm:6.x.x":
-  version: 6.26.0
-  resolution: "babel-runtime@npm:6.26.0"
-  dependencies:
-    core-js: ^2.4.0
-    regenerator-runtime: ^0.11.0
-  checksum: 8aeade94665e67a73c1ccc10f6fd42ba0c689b980032b70929de7a6d9a12eb87ef51902733f8fefede35afea7a5c3ef7e916a64d503446c1eedc9e3284bd3d50
-  languageName: node
-  linkType: hard
-
 "bail@npm:^1.0.0":
   version: 1.0.5
   resolution: "bail@npm:1.0.5"
@@ -4003,6 +4058,13 @@ __metadata:
   version: 1.6.51
   resolution: "big-integer@npm:1.6.51"
   checksum: 3d444173d1b2e20747e2c175568bedeebd8315b0637ea95d75fd27830d3b8e8ba36c6af40374f36bdaea7b5de376dcada1b07587cb2a79a928fccdb6e6e3c518
+  languageName: node
+  linkType: hard
+
+"bignumber.js@npm:^9.0.1":
+  version: 9.1.1
+  resolution: "bignumber.js@npm:9.1.1"
+  checksum: ad243b7e2f9120b112d670bb3d674128f0bd2ca1745b0a6c9df0433bd2c0252c43e6315d944c2ac07b4c639e7496b425e46842773cf89c6a2dcd4f31e5c4b11e
   languageName: node
   linkType: hard
 
@@ -4878,13 +4940,6 @@ __metadata:
   dependencies:
     browserslist: ^4.21.5
   checksum: 51a34d8a292de51f52ac2d72b18ee94743a905d4570a42214262426ebf8f026c853fee22cf4d6c61c2d95f861749421c4de48e9389f551745c5ac1477a5f929f
-  languageName: node
-  linkType: hard
-
-"core-js@npm:^2.4.0":
-  version: 2.6.12
-  resolution: "core-js@npm:2.6.12"
-  checksum: 44fa9934a85f8c78d61e0c8b7b22436330471ffe59ec5076fe7f324d6e8cf7f824b14b1c81ca73608b13bdb0fef035bd820989bf059767ad6fa13123bb8bd016
   languageName: node
   linkType: hard
 
@@ -6039,6 +6094,7 @@ __metadata:
     expo-camera: ~13.2.1
     expo-image-picker: ~14.1.1
     expo-linking: ~4.0.1
+    expo-location: ~15.1.1
     expo-splash-screen: ~0.18.2
     expo-status-bar: ~1.4.4
     phosphor-react-native: ^1.1.2
@@ -6047,6 +6103,8 @@ __metadata:
     react-native: 0.71.8
     react-native-collapsible: ^1.6.1
     react-native-gesture-handler: ~2.9.0
+    react-native-google-autocomplete: ^0.2.0
+    react-native-maps: 1.3.2
     react-native-raw-bottom-sheet: ^2.2.0
     react-native-reanimated: 3.0.2
     react-native-safe-area-context: 4.5.0
@@ -6168,6 +6226,15 @@ __metadata:
     qs: ^6.11.0
     url-parse: ^1.5.9
   checksum: 631656c9cad78c345b35b7decd8c2bc22014b867321fcbb0c740b15001a492080ee3be26d27a89587eb2736223c82a39c600950930cf44b6dd95d37acb7e1527
+  languageName: node
+  linkType: hard
+
+"expo-location@npm:~15.1.1":
+  version: 15.1.1
+  resolution: "expo-location@npm:15.1.1"
+  peerDependencies:
+    expo: "*"
+  checksum: 96bf55821fbee5176d44fe81214923545d914860e7f769ee1380bdb5eeef0c98346bbcb759c29cba99488b3367498f57e3b750ad42cc1a5ae270640b7331d148
   languageName: node
   linkType: hard
 
@@ -7434,7 +7501,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"invariant@npm:*, invariant@npm:^2.2.0, invariant@npm:^2.2.4":
+"invariant@npm:*, invariant@npm:2.2.4, invariant@npm:^2.2.0, invariant@npm:^2.2.4":
   version: 2.2.4
   resolution: "invariant@npm:2.2.4"
   dependencies:
@@ -8386,6 +8453,13 @@ __metadata:
     array-includes: ^3.1.5
     object.assign: ^4.1.3
   checksum: a2ed78cac49a0f0c4be8b1eafe3c5257a1411341d8e7f1ac740debae003de04e5f6372bfcfbd9d082e954ffd99aac85bcda85b7c6bc11609992483f4cdc0f745
+  languageName: node
+  linkType: hard
+
+"kdbush@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "kdbush@npm:3.0.0"
+  checksum: bc5fa433958e42664a8a92457e4f0d1db55b3b8e36956aac0102964adb2eab043bdbff156570dc8d867144ceff588fb7a1c6e099ba9be068cd1767a73e1ace92
   languageName: node
   linkType: hard
 
@@ -9606,6 +9680,7 @@ __metadata:
   resolution: "next-app@workspace:apps/next"
   dependencies:
     "@expo/next-adapter": 5.0.2
+    "@react-google-maps/api": ^2.18.1
     "@types/node": 17.0.21
     app: "*"
     autoprefixer: ^10.4.7
@@ -9614,7 +9689,7 @@ __metadata:
     phosphor-react: ^1.4.1
     raf: ^3.4.1
     react-collapsible: ^2.10.0
-    react-no-ssr: ^1.1.0
+    react-geolocated: ^4.1.0
     react-rainbow-components: ^1.32.0
     setimmediate: ^1.0.5
     tailwindcss: ^3.0.24
@@ -10837,6 +10912,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"query-string@npm:^6.8.1":
+  version: 6.14.1
+  resolution: "query-string@npm:6.14.1"
+  dependencies:
+    decode-uri-component: ^0.2.0
+    filter-obj: ^1.1.0
+    split-on-first: ^1.0.0
+    strict-uri-encode: ^2.0.0
+  checksum: f2c7347578fa0f3fd4eaace506470cb4e9dc52d409a7ddbd613f614b9a594d750877e193b5d5e843c7477b3b295b857ec328903c943957adc41a3efb6c929449
+  languageName: node
+  linkType: hard
+
 "query-string@npm:^7.1.3":
   version: 7.1.3
   resolution: "query-string@npm:7.1.3"
@@ -10971,6 +11058,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-geolocated@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "react-geolocated@npm:4.1.0"
+  peerDependencies:
+    react: ">= 16.8.0 < 19.0.0"
+  checksum: d3d621210a37d4cd4ba253de23cc31bb1f956bb736557a72d6c0f45cc9f2d82c1484c4605b3433a2218880872adf8050b92c8f02fcd507f9a86f7813b94a80df
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0, react-is@npm:^18.1.0":
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
@@ -11046,10 +11142,51 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-google-autocomplete@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "react-native-google-autocomplete@npm:0.2.0"
+  dependencies:
+    lodash.debounce: ^4.0.8
+    prop-types: ^15.7.2
+    query-string: ^6.8.1
+  peerDependencies:
+    react: ">=15"
+  checksum: 9714ade809d311ab637a2de7b39442785701e43ec49642dae4e015f434d37de3cbab9e3d1103e190a6fe2ca0fc98c4922b5e8d2c891465c24ca42bf75e4277a4
+  languageName: node
+  linkType: hard
+
 "react-native-gradle-plugin@npm:^0.71.18":
   version: 0.71.19
   resolution: "react-native-gradle-plugin@npm:0.71.19"
   checksum: 2e3ab679f0b81edd81b9fb88a73a16c8b9b6dbef4e7158fd894c42e6dff04ba8d11f1b9663ffa2c30d0d9deee3cd44b033cd280322c010be3c290e4422088a7a
+  languageName: node
+  linkType: hard
+
+"react-native-maps@npm:1.3.2":
+  version: 1.3.2
+  resolution: "react-native-maps@npm:1.3.2"
+  dependencies:
+    "@types/geojson": ^7946.0.8
+  peerDependencies:
+    react: ">= 17.0.1"
+    react-native: ">= 0.64.3"
+    react-native-web: ">= 0.11"
+  peerDependenciesMeta:
+    react-native-web:
+      optional: true
+  checksum: ebade7b76a4fffe9a36e9ef5c874f4320334a2b69abfe7be5198b29ae75d211537edbf0aed865514b2b1a4abcc58c59e3e91a08a4ca0632de679f8517932e191
+  languageName: node
+  linkType: hard
+
+"react-native-mask-text@npm:^0.14.1":
+  version: 0.14.1
+  resolution: "react-native-mask-text@npm:0.14.1"
+  dependencies:
+    bignumber.js: ^9.0.1
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 1c12bff2ee1aab6e8eb38379bbf26085cea853397a1f0d3401e5199b164ce91ab054073d8c0d12a622cf03f48860e06ee858c879bc537bef0c02f197e603bfe4
   languageName: node
   linkType: hard
 
@@ -11203,17 +11340,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-no-ssr@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "react-no-ssr@npm:1.1.0"
-  dependencies:
-    babel-runtime: 6.x.x
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.0
-  checksum: fa253cecbe6b28fe1531f22da72d241c8dc5f0729ddca40ec38244cad71ae8f8517d12438018769dbb4726e59cfa2fdab613aea3465d2e7862cbc727a44a2565
-  languageName: node
-  linkType: hard
-
 "react-rainbow-components@npm:^1.32.0":
   version: 1.32.0
   resolution: "react-rainbow-components@npm:1.32.0"
@@ -11358,13 +11484,6 @@ __metadata:
   version: 1.4.2
   resolution: "regenerate@npm:1.4.2"
   checksum: 3317a09b2f802da8db09aa276e469b57a6c0dd818347e05b8862959c6193408242f150db5de83c12c3fa99091ad95fb42a6db2c3329bfaa12a0ea4cbbeb30cb0
-  languageName: node
-  linkType: hard
-
-"regenerator-runtime@npm:^0.11.0":
-  version: 0.11.1
-  resolution: "regenerator-runtime@npm:0.11.1"
-  checksum: 3c97bd2c7b2b3247e6f8e2147a002eb78c995323732dad5dc70fac8d8d0b758d0295e7015b90d3d444446ae77cbd24b9f9123ec3a77018e81d8999818301b4f4
   languageName: node
   linkType: hard
 
@@ -12627,6 +12746,15 @@ __metadata:
   version: 9.2.1
   resolution: "sudo-prompt@npm:9.2.1"
   checksum: 50a29eec2f264f2b78d891452a64112d839a30bffbff4ec065dba4af691a35b23cdb8f9107d413e25c1a9f1925644a19994c00602495cab033d53f585fdfd665
+  languageName: node
+  linkType: hard
+
+"supercluster@npm:^7.1.3":
+  version: 7.1.5
+  resolution: "supercluster@npm:7.1.5"
+  dependencies:
+    kdbush: ^3.0.0
+  checksum: 69863238870093b96617135884721b6343746e14f396b2d67d6b55c52c362ec0516c5e386aa21815e75a9cef2054e831ac34023d0d8b600091d28cea0794f027
   languageName: node
   linkType: hard
 

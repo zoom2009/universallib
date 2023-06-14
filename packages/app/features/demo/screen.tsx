@@ -10,6 +10,7 @@ import { Icon } from "app/components/Icon"
 import { ImagePicker } from "app/components/ImagePicker"
 import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
+import { MapPicker } from "app/components/MapPicker"
 import { Toast } from "app/components/Toast"
 import theme from "app/global/theme"
 import { getDateTimestamp } from "app/logics/date"
@@ -161,6 +162,35 @@ export const DemoScreen = () => {
           placeholder="this text area"
         />
         <View className="h-8" />
+        <Input
+          label="Mask Text input"
+          onChangeEffect={console.log}
+          value=""
+          bold
+          required
+          isMask
+          maskString="AAA-999"
+          placeholder="ABC-123"
+        />
+        <View className="h-8" />
+        <Input
+          label="Mask Text input currency"
+          onChangeEffect={console.log}
+          value=""
+          bold
+          required
+          isMask
+          maskType="currency"
+          maskString="999999999"
+          maskOptions={{
+            prefix: '$',
+            decimalSeparator: '.',
+            groupSeparator: ',',
+            precision: 2
+          }}
+          placeholder="card id"
+        />
+        <View className="h-8" />
         <CheckBox
           label="radio"
           bold
@@ -235,6 +265,15 @@ export const DemoScreen = () => {
           bold
           required
           errorMessage="Ea nostrud ullamco ex id."
+        />
+        <View className="h-8" />
+        <MapPicker
+          defaultLocation={{
+            lat: 13.736717,
+            lng: 100.523186,
+          }}
+          googleMapsApiKey="AIzaSyA-ByHssW06jGxkBr4T0LfIjE8c8s173SA"
+          onChangeEffect={console.log}
         />
         <View className="h-8" />
       </ScrollView>

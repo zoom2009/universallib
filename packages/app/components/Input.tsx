@@ -1,10 +1,16 @@
 import { KeyboardTypeOptions } from 'react-native'
 import { ReactNode, useMemo, useState } from 'react'
 import clsx from 'clsx'
+import dynamic from 'next/dynamic'
 import { View } from 'app/components/ComponentWithTailwind'
 import { TextInput } from 'app/components/ComponentWithTailwind'
 import { Label } from 'app/components/Label'
 import { ErrorMessage } from 'app/components/ErrorMessage'
+import { styled } from 'nativewind'
+
+// @ts-ignore
+const _MaskedTextInput = dynamic(() => import('react-native-mask-text').then((mod) => mod.MaskedTextInput), { ssr: false })
+const MaskedTextInput = styled(_MaskedTextInput)
 
 interface IInputProps {
   label?: string
@@ -24,6 +30,14 @@ interface IInputProps {
   onBlur?: () => void
   textColor?: string
   RightIcon?: ReactNode
+  /** look how to use options here doc => https://github.com/akinncar/react-native-mask-text */
+  isMask?: boolean
+  /** look how to use options here doc => https://github.com/akinncar/react-native-mask-text */
+  maskType?: string
+  /** look how to use options here doc => https://github.com/akinncar/react-native-mask-text */
+  maskString?: string
+  /** look how to use options here doc => https://github.com/akinncar/react-native-mask-text */
+  maskOptions?: any
 }
 
 export const Input = (props: IInputProps) => {
@@ -45,6 +59,10 @@ export const Input = (props: IInputProps) => {
     onBlur,
     textColor,
     RightIcon,
+    isMask = false,
+    maskType,
+    maskString,
+    maskOptions,
   } = props
 
   const [isFocus, setIsFocus] = useState(false)
@@ -65,6 +83,12 @@ export const Input = (props: IInputProps) => {
     return 'border-[#555]'
   }, [isFocus, errorMessage])
 
+  // @ts-ignore
+  const InputComponent: typeof TextInput = !isMask ? TextInput : MaskedTextInput
+  const otherProps = !isMask
+    ? {}
+    : { mask: maskString, options: maskOptions, type: maskType }
+
   return (
     <View className="w-full">
       {label && (
@@ -84,7 +108,8 @@ export const Input = (props: IInputProps) => {
           borderColor,
         ])}
       >
-        <TextInput
+        <InputComponent
+          {...otherProps}
           className={clsx([
             'w-full p-4 rounded-md text-sm md:text-md flex-1 border-0',
             disabledStyle && 'text-muted',
