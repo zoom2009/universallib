@@ -1,7 +1,7 @@
 import { TouchableOpacity } from 'app/components/ComponentWithTailwind'
 import { ACTIVE_OPACITY, Button } from 'app/components/Button'
 import { ImagePickerAsset } from 'expo-image-picker'
-import { ReactNode } from 'react'
+import { forwardRef, ReactNode, useImperativeHandle } from 'react'
 
 const isSSR = () => typeof window === 'undefined'
 
@@ -16,7 +16,7 @@ interface IImagePickerProps {
   CustomComponent?: ReactNode
 }
 
-export const ImagePicker = (props: IImagePickerProps) => {
+export const ImagePicker = forwardRef((props: IImagePickerProps, ref) => {
   const {
     multiple = false,
     selectionLimit,
@@ -55,6 +55,10 @@ export const ImagePicker = (props: IImagePickerProps) => {
     </TouchableOpacity>
   }
 
+  useImperativeHandle(ref, () => ({
+    openPicker: () => pickImage()
+  }))
+
   return (
     <Button
       text={text}
@@ -63,4 +67,4 @@ export const ImagePicker = (props: IImagePickerProps) => {
       bold
     />
   )
-}
+})

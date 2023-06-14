@@ -8,8 +8,8 @@ import {
   TextInput as _TextInput,
   ScrollView as _ScrollView,
   Image as _Image,
+  SafeAreaView as _SafeAreaView,
 } from 'react-native'
-import { SafeAreaView as _SafeAreaView } from 'react-native-safe-area-context'
 
 const DefaultText = styled(_Text)
 type TextProps = ComponentProps<typeof DefaultText> & { bold?: boolean }
@@ -27,3 +27,4 @@ export const ActivityIndicator = styled(_ActivityIndicator)
 export const TextInput = styled(_TextInput)
 export const ScrollView = styled(_ScrollView)
 export const Image = styled(_Image)
+export const SafeAreaView = styled(_SafeAreaView)

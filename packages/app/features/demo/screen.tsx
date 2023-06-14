@@ -1,6 +1,7 @@
 import { Accordion } from "app/components/Accordion"
 import { Alert } from "app/components/Alert"
 import { Button } from "app/components/Button"
+import { CameraPicker } from "app/components/CameraPicker"
 import { CheckBox } from "app/components/CheckBox"
 import { ScrollView, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
 import { DatePicker } from "app/components/DatePicker"
@@ -18,9 +19,15 @@ export const DemoScreen = () => {
   const toastRef: any = useRef(null)
   const [isShowAlert, setIsShowAlert] = useState(false)
   const [isShowAccordion, setIsShowAccordion] = useState(false)
+  const [isShowCamera, setIsShowCamera] = useState(false)
 
   return (
     <View className="bg-info-background flex flex-1 flex-col item-center">
+      <CameraPicker
+        onClose={() => setIsShowCamera(false)}
+        isShowCamera={isShowCamera}
+        onChangeEffect={console.log}  
+      />
       <Alert
         show={isShowAlert}
         title="Hi Alert"
@@ -101,6 +108,13 @@ export const DemoScreen = () => {
           value={[]}
           multiple
           quality={4}
+        />
+        <View className="h-8" />
+        <Button
+          onPress={() => setIsShowCamera(true)}
+          type="primary"
+          text="Show Camera"
+          bold
         />
         <View className="h-8" />
         <Input
