@@ -54,6 +54,7 @@ export const Dropdown = (props: IDropdownProps) => {
       </>
       )}
       <SelectList
+        disabledItemStyles={{ backgroundColor: theme.colors.disabled }}
         setSelected={onChangeEffect}
         defaultOption={value}
         notFoundText="ไม่พบข้อมูล"

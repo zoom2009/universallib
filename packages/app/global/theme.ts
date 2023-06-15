@@ -25,7 +25,6 @@ interface ITheme {
     'transparent-outline': string
     'muted-outline': string
     'info-background': string
-    'disabled-full': string
   }
   fontSize: {
     xs: string
