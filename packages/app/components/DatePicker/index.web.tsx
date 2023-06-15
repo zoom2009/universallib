@@ -42,10 +42,9 @@ export const DatePicker = (props: IDatePickerProps) => {
       }
       if (select?.innerHTML) {
         select.innerHTML = html
-        console.log('value:', value)
-        onChangeEffect(value)
+        onChangeEffect(getDateTimestamp())
       }
-    }, 0)
+    }, 250)
   }
 
   const onOpenDatePicker = () => {
@@ -66,6 +65,15 @@ export const DatePicker = (props: IDatePickerProps) => {
     }
     setTimeout(() => setIsOpenDatePicker(false), 200)
   }
+
+  const valueModal = useMemo(() => {
+    console.log('value:', value)
+    return _day(value).toDate()
+  }, [value])
+
+  const title = useMemo(() => {
+    return getFullDate(getDateTimestamp(value), 'กรุณาเลือก')
+  }, [value])
 
   const inputValue = useMemo(() => {
     if (value) return getFullDate(value)
@@ -95,8 +103,8 @@ export const DatePicker = (props: IDatePickerProps) => {
         selectionType="single"
         locale="th-TH"
         onRequestClose={onCloseDatePicker}
-        title={getFullDate(getDateTimestamp(value), 'กรุณาเลือก')}
-        value={_day(value).toDate()}
+        title={title}
+        value={valueModal}
         onChange={onChange}
       />
     </View>
