@@ -135,7 +135,17 @@ const _DemoScreen = () => {
           bold
         />
         <View className="h-8" />
-        <Popover isVisible={isShowPopover} onClose={() => setIsShowPopover(false)}>
+        <Popover
+          contentStyle={{ width: 200 }}
+          Content={(
+            <Text>
+              Hi Duis amet occaecat sit aliqua veniam sint in elit adipisicing magna fugiat ut qui elit.
+            </Text>
+          )}
+
+          isVisible={isShowPopover}
+          onClose={() => setIsShowPopover(false)}
+        >
           <Button
             onPress={() => setIsShowPopover(true)}
             type="warning-outline"
