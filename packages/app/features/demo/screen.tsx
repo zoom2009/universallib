@@ -3,7 +3,7 @@ import { Alert } from "app/components/Alert"
 import { Button } from "app/components/Button"
 import { CameraPicker } from "app/components/CameraPicker"
 import { CheckBox } from "app/components/CheckBox"
-import { ScrollView, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
+import { Image, ScrollView, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
 import { DatePicker } from "app/components/DatePicker"
 import { Dropdown } from "app/components/Dropdown"
 import { Icon } from "app/components/Icon"
@@ -12,6 +12,7 @@ import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
 import { MapPicker } from "app/components/MapPicker"
 import { Popover } from "app/components/Popover"
+import { Cell, TableWrapper } from "app/components/Table"
 import { ToastRootProvider } from "app/components/Toast"
 import { displayToast } from "app/functions/displayToast"
 import theme from "app/global/theme"
@@ -48,7 +49,7 @@ const _DemoScreen = () => {
         <Label>
           This is Label 1
         </Label>
-        <Label required>
+        <Label color={theme.colors.primary} required>
           This is Label 2
         </Label>
         <Label bold>
@@ -284,6 +285,34 @@ const _DemoScreen = () => {
           googleMapsApiKey="AIzaSyA-ByHssW06jGxkBr4T0LfIjE8c8s173SA"
           onChangeEffect={console.log}
         />
+        <View className="h-8" />
+        <Label bold>Table Component</Label>
+        <View className="h-8" />
+        {[
+          { id: '1', image: 'https://picsum.photos/id/1/300/300', title: 'Et incididunt exercitation exercitation exercitation labore fugiat dolore.' },
+          { id: '2', image: 'https://picsum.photos/id/2/300/300', title: 'Cupidatat sunt quis velit in consequat culpa aute in fugiat consequat.' },
+          { id: '3', image: 'https://picsum.photos/id/3/300/300', title: 'Labore consequat laborum et occaecat veniam consectetur.' },
+          { id: '4', image: 'https://picsum.photos/id/4/300/300', title: 'Et sint reprehenderit consectetur et qui non elit ad mollit ullamco id consectetur ullamco et.' },
+          { id: '5', image: 'https://picsum.photos/id/5/300/300', title: 'Pariatur consequat magna amet nostrud cupidatat pariatur ad duis nostrud culpa.' },
+        ].map(({ id, image, title }) => (
+          <TableWrapper key={id} style={{ borderRadius: 10, backgroundColor: 'white', flexDirection: 'row', marginBottom: 20 }}>
+            <Cell
+              data={<Text className="font-bold text-md text-[#555]">{id}.</Text>}
+              width={'20%'}
+              style={{ justifyContent: 'center', alignItems: 'center', height: 100 }}
+            />
+            <Cell
+              data={<Text className="font-bold text-md text-primary">{title}.</Text>}
+              width={'40%'}
+              style={{ justifyContent: 'center', height: 100 }}
+            />
+            <Cell
+              data={<Image style={{ resizeMode: 'cover', width: 100, height: '90%', borderRadius: 10 }} source={{ uri: image }} />}
+              width={'40%'}
+              style={{ justifyContent: 'center', alignItems: 'center', height: 100 }}
+            />
+          </TableWrapper>
+        ))}
         <View className="h-8" />
       </ScrollView>
     </View>

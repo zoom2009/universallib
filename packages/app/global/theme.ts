@@ -26,14 +26,6 @@ interface ITheme {
     'muted-outline': string
     'info-background': string
     'disabled-full': string
-    'primary-full': string
-    'secondary-full': string
-    'info-full': string
-    'success-full': string
-    'warning-full': string
-    'danger-full': string
-    'transparent-full': string
-    'muted-full': string
   }
   fontSize: {
     xs: string

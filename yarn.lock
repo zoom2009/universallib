@@ -3571,6 +3571,7 @@ __metadata:
     react-native-awesome-alerts: ^2.0.0
     react-native-dropdown-select-list: "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git"
     react-native-mask-text: ^0.14.1
+    react-native-table-component: ^1.2.2
     react-native-walkthrough-tooltip: ^1.5.0
     solito: 3.0.0
   languageName: unknown
@@ -11289,6 +11290,13 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: e630c057d6a0947c4d729538f643585a1fd9380975c1cf9adffad7647822b35219a9e1e60407f422b2b70592ed7f7e8766fab15df74f9cfce0b1c8a1c3544676
+  languageName: node
+  linkType: hard
+
+"react-native-table-component@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "react-native-table-component@npm:1.2.2"
+  checksum: 906a0ae3b23bcf4a98237d07853bb416feb3d512a4f28e758470a3c45154f15e92445d57ef272e3c3c24c7355ec6ccbf6b53e7ce917ed1964b9f973084d88c46
   languageName: node
   linkType: hard
 

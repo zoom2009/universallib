@@ -8,6 +8,7 @@ interface ILabelProps {
   fullText?: boolean
   bold?: boolean
   textClassName?: string
+  color?: string
 }
 
 const _Label = (props: ILabelProps) => {
@@ -17,12 +18,14 @@ const _Label = (props: ILabelProps) => {
     fullText = false,
     bold = false,
     textClassName = '',
+    color,
   } = props
 
   return (
     <View className="flex flex-row items-center">
       <Text
         bold={bold}
+        style={{ color }}
         className={clsx([
           'text-sm sm:text-md',
           fullText && 'whitespace-pre',

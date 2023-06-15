@@ -19,6 +19,8 @@ const nextConfig = {
     'react-native-dropdown-select-list',
     'react-native-awesome-alerts',
     'expo-image-picker',
+    'react-native-table-component',
+    'react-native-walkthrough-tooltip',
   ],
 }
 
