@@ -136,11 +136,13 @@ const _DemoScreen = () => {
         />
         <View className="h-8" />
         <Popover
-          contentStyle={{ width: 200 }}
+          contentStyle={{ width: 300 }}
           Content={(
-            <Text>
-              Hi Duis amet occaecat sit aliqua veniam sint in elit adipisicing magna fugiat ut qui elit.
-            </Text>
+            <View className="p-2">
+              <Text>
+                Hi Duis amet occaecat sit aliqua veniam sint in elit adipisicing magna fugiat ut qui elit.
+              </Text>
+            </View>
           )}
 
           isVisible={isShowPopover}

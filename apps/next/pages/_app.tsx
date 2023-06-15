@@ -9,6 +9,11 @@ import '../global.css'
 import { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  if (process.browser) {
+    // @ts-ignore
+    window._frameTimestamp = null
+  }
+
   return (
     <>
       <Head>

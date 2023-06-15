@@ -21,6 +21,7 @@ const nextConfig = {
     'expo-image-picker',
     'react-native-table-component',
     'react-native-walkthrough-tooltip',
+    'moti',
   ],
 }
 
