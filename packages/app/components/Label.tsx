@@ -25,7 +25,7 @@ const _Label = (props: ILabelProps) => {
     <View className="flex flex-row items-center">
       <Text
         bold={bold}
-        style={{ color }}
+        style={color ? { color } : {}}
         className={clsx([
           'text-sm sm:text-md',
           fullText && 'whitespace-pre',

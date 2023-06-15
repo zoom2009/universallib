@@ -42,7 +42,7 @@ export const DatePicker = (props: IDatePickerProps) => {
       }
       if (select?.innerHTML) {
         select.innerHTML = html
-        onChangeEffect(getDateTimestamp())
+        onChangeEffect(value)
       }
     }, 250)
   }
