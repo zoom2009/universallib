@@ -52,14 +52,14 @@ const _DemoScreen = () => {
         <Label>
           This is Label 1
         </Label>
-        <Label color={theme.colors.primary} required>
-          This is Label 2
+        <Label color={theme.colors.primary}>
+          This is Label 2 (with color)
         </Label>
         <Label bold>
-          This is Label 3
+          This is Label 3 (with bold)
         </Label>
-        <Label required bold>
-          This is Label 4
+        <Label textClassName="text-danger" required bold>
+          This is Label 4 (with textClassName & required)
         </Label>
         <Text bold className="mt-10 text-xl text-primary">Many Icons Out there!</Text>
         <View className="flex flex-row p-4">
