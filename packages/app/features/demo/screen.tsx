@@ -2,6 +2,7 @@ import { Accordion } from "app/components/Accordion"
 import { Alert } from "app/components/Alert"
 import { Button } from "app/components/Button"
 import { CameraPicker } from "app/components/CameraPicker"
+import { Grid, LineChart, XAxis } from "app/components/Chart"
 import { CheckBox } from "app/components/CheckBox"
 import { Image, ScrollView, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
 import { DatePicker } from "app/components/DatePicker"
@@ -24,6 +25,8 @@ const _DemoScreen = () => {
   const [isShowAccordion, setIsShowAccordion] = useState(false)
   const [isShowCamera, setIsShowCamera] = useState(false)
   const [isShowPopover, setIsShowPopover] = useState(false)
+
+  const chartData = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
 
   return (
     <View className="bg-info-background flex flex-1 flex-col item-center">
@@ -298,21 +301,45 @@ const _DemoScreen = () => {
           <TableWrapper key={id} style={{ borderRadius: 10, backgroundColor: 'white', flexDirection: 'row', marginBottom: 20 }}>
             <Cell
               data={<Text className="font-bold text-md text-[#555]">{id}.</Text>}
+              // @ts-ignore
               width={'20%'}
               style={{ justifyContent: 'center', alignItems: 'center', height: 100 }}
             />
             <Cell
               data={<Text className="font-bold text-md text-primary">{title}.</Text>}
+              // @ts-ignore
               width={'40%'}
               style={{ justifyContent: 'center', height: 100 }}
             />
             <Cell
               data={<Image style={{ resizeMode: 'cover', width: 100, height: '90%', borderRadius: 10 }} source={{ uri: image }} />}
+              // @ts-ignore
               width={'40%'}
               style={{ justifyContent: 'center', alignItems: 'center', height: 100 }}
             />
           </TableWrapper>
         ))}
+        <View className="h-8" />
+        <Label bold>Some Chart (Line Chart & many)</Label>
+        <View className="h-4" />
+        <View style={{ height: 200, padding: 20, maxWidth: 400 }}>
+          <LineChart
+            style={{ flex: 1 }}
+            data={chartData}
+            gridMin={0}
+            contentInset={{ top: 10, bottom: 10 }}
+            svg={{ stroke: 'rgb(134, 65, 244)' }}
+          >
+            <Grid />
+          </LineChart>
+          <XAxis
+            style={{ marginHorizontal: -10 }}
+            data={chartData}
+            formatLabel={(value, index) => index}
+            contentInset={{ left: 10, right: 10 }}
+            svg={{ fontSize: 10, fill: 'black' }}
+          />
+        </View>
         <View className="h-8" />
       </ScrollView>
     </View>
