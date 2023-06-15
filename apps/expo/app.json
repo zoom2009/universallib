@@ -9,7 +9,10 @@
       "android"
     ],
     "ios": {
-      "bundleIdentifier": "com.zoom2009.universallib"
+      "bundleIdentifier": "com.zoom2009.universallib",
+      "config": {
+        "googleMapsApiKey": "AIzaSyA-ByHssW06jGxkBr4T0LfIjE8c8s173SA"
+      }
     },
     "plugins": [
       [
@@ -24,9 +27,20 @@
         {
           "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
       ]
     ],
     "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyA-ByHssW06jGxkBr4T0LfIjE8c8s173SA"
+        }
+      },
       "permissions": [
         "android.permission.RECORD_AUDIO"
       ],

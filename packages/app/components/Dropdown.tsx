@@ -20,7 +20,9 @@ interface IDropdownProps {
   search?: boolean
   value: TOption
   options: TOption[]
-  onChangeEffect: (option: TOption) => void
+  onChangeEffect: (key: string) => void
+  onSearchEffect?: (text: string) => void
+  placeholder?: string
 }
 
 export const Dropdown = (props: IDropdownProps) => {
@@ -33,6 +35,8 @@ export const Dropdown = (props: IDropdownProps) => {
     value,
     options,
     onChangeEffect,
+    onSearchEffect,
+    placeholder = 'พิมพ์เพื่อค้นหา',
   } = props
 
   const [isFocus, setIsFocus] = useState(false)
@@ -76,7 +80,8 @@ export const Dropdown = (props: IDropdownProps) => {
         closeicon={<Icon.XCircle size={24} color="black" />}
         placeholderColor="#999"
         onFocus={setIsFocus}
-        searchPlaceholder="พิมพ์เพื่อค้นหา"
+        onSearchEffect={onSearchEffect}
+        searchPlaceholder={placeholder}
         placeholder="กรุณาเลือก"
       />
       <ErrorMessage text={errorMessage} />

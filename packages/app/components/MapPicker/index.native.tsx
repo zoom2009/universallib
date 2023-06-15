@@ -19,6 +19,7 @@ export const MapPicker = (props: IMapPickerProps) => {
   const [typeLat, setTypeLat] = useState('')
   const [typeLng, setTypeLng] = useState('')
   const [isReady, setIsReady] = useState(false)
+  const [dropdownSelected, setDropdownSelected] = useState<any>(undefined)
 
   const onMapReady = () => {
     setTimeout(() => {
@@ -76,6 +77,8 @@ export const MapPicker = (props: IMapPickerProps) => {
     }, 500)
   }
 
+  const transformOnChangeLocationText = (text: string) => text.replace(/[^0-9.]/g, '')
+
   useEffect(() => {
     requestPermission()
   }, [])
@@ -95,9 +98,8 @@ export const MapPicker = (props: IMapPickerProps) => {
             value={typeLat}
             label="ละติจูด"
             placeholder="ระบุละติจูด"
-            // transformOnChangeText={mask.numberOrDot}
-            // onChangeEffect={onTypeLocation('lat')}
-            onChangeEffect={console.log}
+            transformOnChange={transformOnChangeLocationText}
+            onChangeEffect={onTypeLocation('lat')}
           />
         </View>
         <View className="w-4" />
@@ -106,9 +108,8 @@ export const MapPicker = (props: IMapPickerProps) => {
             value={typeLng}
             label="ลองติจูด"
             placeholder="ระบุลองติจูด"
-            // transformOnChangeText={mask.numberOrDot}
-            // onChangeEffect={onTypeLocation('lng')}
-            onChangeEffect={console.log}
+            transformOnChange={transformOnChangeLocationText}
+            onChangeEffect={onTypeLocation('lng')}
           />
         </View>
       </View>
@@ -123,11 +124,12 @@ export const MapPicker = (props: IMapPickerProps) => {
             const secondaryText = R.prop('secondary_text', structured_formatting)
             const desc = description
             const label = mainText || desc || secondaryText
-            return { value: place_id, key: label }
+            return { key: place_id, value: label }
           })
 
-          const onSelectLocation = (item: { label: string, value: string }) => {
-            fetchDetails(item.value).then((value: any) => {
+          const onSelectLocation = (item: string) => {
+            setDropdownSelected(item)
+            fetchDetails(item).then((value: any) => {
               const lat = R.pathOr(-999, ['geometry', 'location', 'lat'], value)
               const lng = R.pathOr(-999, ['geometry', 'location', 'lng'], value)
               if (lat !== -999 && lng !== -999 && !isEmpty(lat) && !isEmpty(lng)) { // valid
@@ -141,22 +143,24 @@ export const MapPicker = (props: IMapPickerProps) => {
 
           return (
             <View className="mt-6">
-              {/* <Dropdown
+              <Dropdown
+                value={dropdownSelected}
+                search
                 onSearchEffect={handleTextChange}
-                isSearchable
+                onChangeEffect={onSelectLocation}
                 options={!isEmpty(inputValue) ? options : []}
                 placeholder="ค้นหาสถานที่"
-                onChangeEffect={onSelectLocation}
-              /> */}
+              />
             </View>
           )
         }}
       </GoogleAutoComplete>
-      <View style={{ marginTop: 14, width: width * 0.815, height: 450 }}>
+      <View style={{ marginTop: 14, width: width * 0.9, height: 450, alignItems: 'center' }}>
         <MapView
           onMapReady={onMapReady}
+          // provider={Platform.OS === 'ios' ? PROVIDER_DEFAULT : PROVIDER_GOOGLE}
           provider={PROVIDER_GOOGLE}
-          style={{ width: width * 0.815, height: 450 }}
+          style={{ width: width * 0.9, height: 450, borderRadius: 10 }}
           region={isReady ? {
             latitude: center.lat,
             longitude: center.lng,

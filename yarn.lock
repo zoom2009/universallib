@@ -11132,9 +11132,9 @@ __metadata:
   linkType: hard
 
 "react-native-dropdown-select-list@git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git":
-  version: 2.0.4
-  resolution: "react-native-dropdown-select-list@https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git#commit=3cd755ab57656870833c4988a30137ecbb8457f3"
-  checksum: 0d01aeea67dbf07a71ab3cd42ff61b6008092fe91b4663d5b4248d5ca6a5c07f8836c2164f2b06fbe1fbc98fe81bdc31e6fe258c6c1736e52498671ef0c26656
+  version: 2.0.5
+  resolution: "react-native-dropdown-select-list@https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git#commit=cab90e984af2de75032cb92fb41770af5ae2a3a2"
+  checksum: beb4316d438c2e3d59cc61d83d7605b674f05cc436bb8b37953f950f78c6ca823bf9dd32db13b1f7a92619e329df0ab3fffdb91de4ce43ffdd25028c865b19af
   languageName: node
   linkType: hard
 
