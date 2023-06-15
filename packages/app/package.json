@@ -10,6 +10,7 @@
     "react-native-awesome-alerts": "^2.0.0",
     "react-native-dropdown-select-list": "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git",
     "react-native-mask-text": "^0.14.1",
+    "react-native-walkthrough-tooltip": "^1.5.0",
     "solito": "3.0.0"
   },
   "sideEffects": false

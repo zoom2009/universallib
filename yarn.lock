@@ -3571,6 +3571,7 @@ __metadata:
     react-native-awesome-alerts: ^2.0.0
     react-native-dropdown-select-list: "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git"
     react-native-mask-text: ^0.14.1
+    react-native-walkthrough-tooltip: ^1.5.0
     solito: 3.0.0
   languageName: unknown
   linkType: soft
@@ -10860,7 +10861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:*, prop-types@npm:^15.5.10, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:*, prop-types@npm:^15.5.10, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -11058,6 +11059,13 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
   checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
+  languageName: node
+  linkType: hard
+
+"react-fast-compare@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "react-fast-compare@npm:2.0.4"
+  checksum: 06046595f90a4e3e3a56f40a8078c00aa71bdb064ddb98343f577f546aa22e888831fd45f009c93b34707cc842b4c637737e956fd13d6f80607ee92fb9cf9a1c
   languageName: node
   linkType: hard
 
@@ -11281,6 +11289,18 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: e630c057d6a0947c4d729538f643585a1fd9380975c1cf9adffad7647822b35219a9e1e60407f422b2b70592ed7f7e8766fab15df74f9cfce0b1c8a1c3544676
+  languageName: node
+  linkType: hard
+
+"react-native-walkthrough-tooltip@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "react-native-walkthrough-tooltip@npm:1.5.0"
+  dependencies:
+    prop-types: ^15.6.1
+    react-fast-compare: ^2.0.4
+  peerDependencies:
+    "@types/react": ">=16.8.24 <18"
+  checksum: 214cb894acb340afed2970e6e5836484953c6dec6d823a440ac3cd05fc74b5b5962895fe87a60f2cc706309e4c22e93c3d24388220a3eb6f0d16fa351b0af061
   languageName: node
   linkType: hard
 

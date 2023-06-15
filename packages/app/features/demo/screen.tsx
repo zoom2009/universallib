@@ -11,6 +11,7 @@ import { ImagePicker } from "app/components/ImagePicker"
 import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
 import { MapPicker } from "app/components/MapPicker"
+import { Popover } from "app/components/Popover"
 import { ToastRootProvider } from "app/components/Toast"
 import { displayToast } from "app/functions/displayToast"
 import theme from "app/global/theme"
@@ -21,6 +22,7 @@ const _DemoScreen = () => {
   const [isShowAlert, setIsShowAlert] = useState(false)
   const [isShowAccordion, setIsShowAccordion] = useState(false)
   const [isShowCamera, setIsShowCamera] = useState(false)
+  const [isShowPopover, setIsShowPopover] = useState(false)
 
   return (
     <View className="bg-info-background flex flex-1 flex-col item-center">
@@ -128,6 +130,15 @@ const _DemoScreen = () => {
           text="Show Camera"
           bold
         />
+        <View className="h-8" />
+        <Popover isVisible={isShowPopover} onClose={() => setIsShowPopover(false)}>
+          <Button
+            onPress={() => setIsShowPopover(true)}
+            type="warning-outline"
+            text="Show Popover"
+            bold
+          />
+        </Popover>
         <View className="h-8" />
         <Input
           onChangeEffect={console.log}
