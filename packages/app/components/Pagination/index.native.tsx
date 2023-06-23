@@ -1,4 +1,4 @@
-import { useMemo, useRef } from "react"
+import { useEffect, useMemo, useRef } from "react"
 import { FlatList } from "react-native"
 import { ACTIVE_OPACITY } from "app/components/Button"
 import { Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
@@ -59,6 +59,20 @@ export const Pagination = (props: IPaginationProps) => {
       </TouchableOpacity>
     )
   }
+
+  useEffect(() => {
+    setTimeout(() => {
+      try {
+        listRef.current.scrollToIndex({
+          animated: false,
+          index: current - 1,
+          viewPosition: 0.5
+        })
+      } catch (e) {
+        console.log('fail to init scroll pagination e:', e)
+      }
+    }, 500)
+  }, [])
 
   return (
     <View className="flex flex-1 w-full mx-auto flex-row justify-between items-center bg-[#d9d9d9] py-2.5 rounded-lg">
