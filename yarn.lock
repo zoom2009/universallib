@@ -10764,6 +10764,7 @@ __metadata:
     react-collapsible: ^2.10.0
     react-geolocated: ^4.1.0
     react-rainbow-components: ^1.32.0
+    react-responsive-pagination: ^2.2.0
     react-toast: ^1.0.3
     setimmediate: ^1.0.5
     tailwindcss: ^3.0.24
@@ -12549,6 +12550,18 @@ __metadata:
   version: 0.4.3
   resolution: "react-refresh@npm:0.4.3"
   checksum: 58d3b899ede4c890b1d06a2d02254a77d1c0dea400be139940e47b1c451ff1c4cbb3ca5d0a9d6ee9574e570075ab6c1bef15e77b7270d4a6f571847d2b26f4fc
+  languageName: node
+  linkType: hard
+
+"react-responsive-pagination@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "react-responsive-pagination@npm:2.2.0"
+  dependencies:
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: a5327f7dfec44ad1e6622171e651a59ce617eb562fe2aea810e28eb9d4a3ad72fc0827721a9a2038c26ea7a98bd3b79f9988cf96f47e1151b82b6acb879802e4
   languageName: node
   linkType: hard
 

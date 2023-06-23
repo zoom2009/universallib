@@ -12,6 +12,7 @@ import { ImagePicker } from "app/components/ImagePicker"
 import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
 import { MapPicker } from "app/components/MapPicker"
+import { Pagination } from "app/components/Pagination"
 import { Popover } from "app/components/Popover"
 import { Cell, TableWrapper } from "app/components/Table"
 import { ToastRootProvider } from "app/components/Toast"
@@ -352,6 +353,12 @@ const _DemoScreen = () => {
             svg={{ fontSize: 10, fill: 'black' }}
           />
         </View>
+        <View className="h-8" />
+        <Pagination
+          current={10}
+          total={39}
+          onPageChange={console.log}
+        />
         <View className="h-8" />
       </ScrollView>
     </View>
