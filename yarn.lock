@@ -7099,6 +7099,7 @@ __metadata:
     react-native-svg: 13.4.0
     react-native-web: ~0.18.11
     react-native-wheel-pick: ^1.2.2
+    rn-placeholder: ^3.0.3
     tailwindcss: ^3.0.24
     typescript: ^4.9.4
   languageName: unknown
@@ -13224,6 +13225,16 @@ __metadata:
   bin:
     rimraf: ./bin.js
   checksum: 3ea587b981a19016297edb96d1ffe48af7e6af69660e3b371dbfc73722a73a0b0e9be5c88089fbeeb866c389c1098e07f64929c7414290504b855f54f901ab10
+  languageName: node
+  linkType: hard
+
+"rn-placeholder@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "rn-placeholder@npm:3.0.3"
+  peerDependencies:
+    react: ^16.13.1
+    react-native: ^0.63.2
+  checksum: 918ab007f97cab9f84af1196f586ea9c58edc8fcebb2206dbed70ac01c48bc4d45aa8101934897cc8601b85364ab20032ad6b92c6879e9f560ea7c30ed430470
   languageName: node
   linkType: hard
 
