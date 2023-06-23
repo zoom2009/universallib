@@ -61,15 +61,15 @@ export const Pagination = (props: IPaginationProps) => {
   }
 
   return (
-    <View className="mx-auto flex-row justify-between items-center bg-[#d9d9d9] py-2.5 rounded-lg">
+    <View className="flex flex-1 w-full mx-auto flex-row justify-between items-center bg-[#d9d9d9] py-2.5 rounded-lg">
       <TouchableOpacity
         onPress={onBack}
         activeOpacity={ACTIVE_OPACITY}
-        className="justify-center items-center pl-2 pr-4"
+        className="justify-center items-center pl-2 pr-1"
       >
         <Icon.CaretLeft weight="bold" size={28} color={current > 0 ? theme.colors.primary : theme.colors.disabled} />
       </TouchableOpacity>
-      <View className="items-center justify-center rounded-full bg-[#eee]">
+      <View className="flex flex-1 items-center justify-center rounded-full bg-[#eee]">
         <FlatList
           ref={listRef as any}
           bounces={false}
@@ -85,7 +85,7 @@ export const Pagination = (props: IPaginationProps) => {
       <TouchableOpacity
         onPress={onNext}
         activeOpacity={ACTIVE_OPACITY}
-        className="justify-center items-center pr-2 pl-4"
+        className="justify-center items-center pr-2 pl-1"
       >
         <Icon.CaretRight weight="bold" size={28} color={current < total ? theme.colors.primary : theme.colors.disabled} />
       </TouchableOpacity>
