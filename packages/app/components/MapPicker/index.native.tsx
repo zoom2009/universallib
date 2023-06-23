@@ -5,14 +5,13 @@ import * as R from 'ramda'
 import { GoogleAutoComplete } from 'react-native-google-autocomplete'
 import { View } from '../ComponentWithTailwind'
 import { isEmpty } from 'app/logics/validate'
-import { Dimensions } from 'react-native'
-import { IMapPickerProps } from './interface'
+import { useWindowDimensions } from 'react-native'
 import { Dropdown } from 'app/components/Dropdown'
 import { Input } from 'app/components/Input'
-
-const { width } = Dimensions.get('window')
+import { IMapPickerProps } from './interface'
 
 export const MapPicker = (props: IMapPickerProps) => {
+  const { width } = useWindowDimensions()
   const { defaultLocation, googleMapsApiKey, onChangeEffect, value } = props
   const [center, setCenter] = useState({ lat: defaultLocation.lat, lng: defaultLocation.lng })
   const [marker, setMarker] = useState({ lat: defaultLocation.lat, lng: defaultLocation.lng })
