@@ -1,7 +1,12 @@
-import { MotiView } from 'moti'
-import { Skeleton as _Skeleton } from 'moti/skeleton'
+import dynamic from 'next/dynamic'
 import { StyleProp, ViewStyle } from 'react-native'
 import { ReactNode } from 'react'
+
+// @ts-ignore
+export const MotiView = dynamic(() => import('moti').then((mod) => mod.MotiView), { ssr: false })
+
+// @ts-ignore
+export const _Skeleton = dynamic(() => import('moti/skeleton').then((mod) => mod.Skeleton), { ssr: false })
 
 interface ISkeletonContainerProps {
   style?: StyleProp<ViewStyle>

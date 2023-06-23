@@ -1,5 +1,6 @@
 import { Accordion } from "app/components/Accordion"
 import { Alert } from "app/components/Alert"
+import { AvoidSoftInputView } from "app/components/AvoidSoftInputView"
 import { Button } from "app/components/Button"
 import { CameraPicker } from "app/components/CameraPicker"
 import { Grid, LineChart, XAxis } from "app/components/Chart"
@@ -21,7 +22,6 @@ import { displayToast } from "app/functions/displayToast"
 import theme from "app/global/theme"
 import { getDateTimestamp } from "app/logics/date"
 import { useState } from "react"
-import { AvoidSoftInputView } from 'react-native-avoid-softinput'
 
 const _DemoScreen = () => {
   const [isShowAlert, setIsShowAlert] = useState(false)
@@ -364,7 +364,7 @@ const _DemoScreen = () => {
               onPageChange={console.log}
             />
             <View className="h-8" />
-            <SkeletonContainer style={{ justifyContent: 'center', alignItems: 'center', padding: 30 }}>
+            <SkeletonContainer style={{ justifyContent: 'center', alignItems: 'center', padding: 30, backgroundColor: 'red' }}>
               <Skeleton width={50} height={45} />
               <View className="h-4" />
               <Skeleton radius={20} width="90%" height={45} />

@@ -1,0 +1,1 @@
+export { AvoidSoftInputView } from './index.web'
