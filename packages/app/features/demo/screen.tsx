@@ -14,6 +14,7 @@ import { Label } from "app/components/Label"
 import { MapPicker } from "app/components/MapPicker"
 import { Pagination } from "app/components/Pagination"
 import { Popover } from "app/components/Popover"
+import { Skeleton, SkeletonContainer } from "app/components/Skeleton"
 import { Cell, TableWrapper } from "app/components/Table"
 import { ToastRootProvider } from "app/components/Toast"
 import { displayToast } from "app/functions/displayToast"
@@ -359,6 +360,12 @@ const _DemoScreen = () => {
           total={39}
           onPageChange={console.log}
         />
+        <View className="h-8" />
+        <SkeletonContainer style={{ justifyContent: 'center', alignItems: 'center', padding: 30 }}>
+          <Skeleton width={50} height={50} />
+          <View className="h-4" />
+          <Skeleton circle width={100} height={100} />
+        </SkeletonContainer>
         <View className="h-8" />
       </ScrollView>
     </View>
