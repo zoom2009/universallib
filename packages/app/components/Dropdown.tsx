@@ -5,6 +5,7 @@ import theme from 'app/global/theme'
 import { View } from 'app/components/ComponentWithTailwind'
 import { ErrorMessage } from 'app/components/ErrorMessage'
 import { Label } from 'app/components/Label'
+import { Platform } from 'react-native'
 
 type TOption = {
   key: string
@@ -58,11 +59,9 @@ export const Dropdown = (props: IDropdownProps) => {
         setSelected={onChangeEffect}
         defaultOption={value}
         notFoundText="ไม่พบข้อมูล"
-        data={options} 
-        inputStyles={{
-          // @ts-ignore
-          outlineStyle: 'none',
-        }}
+        data={options}
+        // @ts-ignore
+        inputStyles={Platform.OS === 'web' ? { outlineStyle: 'none' } : {}}
         boxStyles={{
           borderRadius: 8,
           borderColor: !isFocus ? '#555' : theme.colors.info,

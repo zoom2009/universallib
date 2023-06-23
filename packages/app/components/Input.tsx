@@ -1,4 +1,4 @@
-import { KeyboardTypeOptions } from 'react-native'
+import { KeyboardTypeOptions, Platform } from 'react-native'
 import { ReactNode, useMemo, useState } from 'react'
 import clsx from 'clsx'
 import dynamic from 'next/dynamic'
@@ -126,8 +126,12 @@ export const Input = (props: IInputProps) => {
             disabledStyle && 'text-muted',
             isTextArea && 'h-32',
           ])}
-          // @ts-ignore
-          style={[{ outlineStyle: 'none', textAlignVertical: isTextArea ? 'top' : 'auto' }, !!textColor && { color: textColor }]}
+          style={[
+            // @ts-ignore
+            Platform.OS === 'web' && { outlineStyle: 'none' },
+            { textAlignVertical: isTextArea ? 'top' : 'auto' },
+            !!textColor && { color: textColor }
+          ]}
           value={value}
           onFocus={onFocusFunction}
           onBlur={onBlurFunction}

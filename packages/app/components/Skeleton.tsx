@@ -19,16 +19,16 @@ export const SkeletonContainer = (props: ISkeletonContainerProps) => (
 )
 
 interface ISkeletonProps {
-  circle?: boolean
   width?: string | number
   height?: string | number
+  radius?: 'round' | 'square' | number
 }
 
 export const Skeleton = (props: ISkeletonProps) => {
   return (
     <_Skeleton
       colorMode="light"
-      radius={props.circle ? 'round' : 'square'}
+      radius={props.radius}
       height={props.height}
       width={props.width}
     />

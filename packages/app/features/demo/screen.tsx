@@ -363,9 +363,11 @@ const _DemoScreen = () => {
           />
           <View className="h-8" />
           <SkeletonContainer style={{ justifyContent: 'center', alignItems: 'center', padding: 30 }}>
-            <Skeleton width={50} height={50} />
+            <Skeleton width={50} height={45} />
             <View className="h-4" />
-            <Skeleton circle width={100} height={100} />
+            <Skeleton radius={20} width="90%" height={45} />
+            <View className="h-4" />
+            <Skeleton radius="round" width={100} height={100} />
           </SkeletonContainer>
           <View className="h-8" />
         </ScrollView>
