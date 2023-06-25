@@ -66,6 +66,10 @@ const _DemoScreen = () => {
             <Label textClassName="text-danger" required bold>
               This is Label 4 (with textClassName & required)
             </Label>
+            <View className="h-8" />
+            <Label bold>All image include cache & placeholder.</Label>
+            <View className="h-4" />
+            <Image contentFit="cover" style={{ borderRadius: 14, width: 200, height: 200 }} source={{ uri: 'https://i.pinimg.com/originals/ec/b9/2d/ecb92d18c7855c986a5571c1b6f7cad2.jpg' }} />
             <Text bold className="mt-10 text-xl text-primary">Many Icons Out there!</Text>
             <View className="flex flex-row p-4">
               <Icon.Phone size={40} color={theme.colors.warning} />
@@ -329,7 +333,7 @@ const _DemoScreen = () => {
                   style={{ justifyContent: 'center', height: 100 }}
                 />
                 <Cell
-                  data={<Image style={{ resizeMode: 'cover', width: 100, height: '90%', borderRadius: 10 }} source={{ uri: image }} />}
+                  data={<Image contentFit="cover" style={{ width: 100, height: '90%', borderRadius: 10 }} source={{ uri: image }} />}
                   // @ts-ignore
                   width={'40%'}
                   style={{ justifyContent: 'center', alignItems: 'center', height: 100 }}

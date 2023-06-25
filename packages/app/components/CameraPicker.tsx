@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Modal, Platform, Switch } from 'react-native'
+import { Modal, Platform, Switch, useWindowDimensions } from 'react-native'
 import { Image, SafeAreaView, TouchableOpacity, Text, View } from 'app/components/ComponentWithTailwind'
 import { Icon } from 'app/components/Icon'
 import { CameraCapturedPicture } from 'expo-camera'
@@ -20,6 +20,9 @@ export const CameraPicker = (props: ICameraPickerProps) => {
     onClose,
     onChangeEffect,
   } = props
+
+  const { width } = useWindowDimensions()
+  const height = Math.round((width * 4) / 3)
 
   type CameraModuleType = typeof import('expo-camera')
   const CameraModule: CameraModuleType = !isSSR() ? require('expo-camera') : undefined
@@ -101,7 +104,8 @@ export const CameraPicker = (props: ICameraPickerProps) => {
         )}
         {hasCameraPermission && !picture && !isSSR() && (
         <CameraModule.Camera
-          style={{ flex: 1, width: '100%', height: '100%' }}
+          ratio="4:3"
+          style={{ flex: 1, width: '100%', height }}
           type={cameraType}
           ref={cameraRef}
         >

@@ -123,3 +123,7 @@ web-build/
 dist/
 
 # @end expo-cli
+
+# app files
+*.apk
+*.ipa

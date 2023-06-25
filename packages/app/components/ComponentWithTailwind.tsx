@@ -1,4 +1,5 @@
 import { styled } from 'nativewind'
+import { Image as _Image } from 'expo-image'
 import { ComponentProps, memo } from 'react'
 import {
   View as _View,
@@ -7,7 +8,7 @@ import {
   ActivityIndicator as _ActivityIndicator,
   TextInput as _TextInput,
   ScrollView as _ScrollView,
-  Image as _Image,
+  Image as _BaseImage,
   SafeAreaView as _SafeAreaView,
 } from 'react-native'
 
@@ -20,11 +21,23 @@ const __Text = (props: TextProps) => (
   />
 )
 
+const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj['
+const DefaultImage = styled(_Image)
+type ImageProps = ComponentProps<typeof DefaultImage>
+const __DefaultImage = (props: ImageProps) => (
+  <DefaultImage
+    placeholder={blurhash}
+    transition={1000}
+    {...props}
+  />
+)
+
 export const Text = memo(__Text)
 export const View = styled(_View)
 export const TouchableOpacity = styled(_TouchableOpacity)
 export const ActivityIndicator = styled(_ActivityIndicator)
 export const TextInput = styled(_TextInput)
 export const ScrollView = styled(_ScrollView)
-export const Image = styled(_Image)
 export const SafeAreaView = styled(_SafeAreaView)
+export const BaseImage = styled(_BaseImage)
+export const Image = memo(__DefaultImage)
