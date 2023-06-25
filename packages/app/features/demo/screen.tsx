@@ -10,6 +10,7 @@ import { DatePicker } from "app/components/DatePicker"
 import { Dropdown } from "app/components/Dropdown"
 import { Icon } from "app/components/Icon"
 import { ImagePicker } from "app/components/ImagePicker"
+import { ImagesView } from "app/components/ImagesView"
 import { Input } from "app/components/Input"
 import { Label } from "app/components/Label"
 import { MapPicker } from "app/components/MapPicker"
@@ -22,8 +23,10 @@ import { displayToast } from "app/functions/displayToast"
 import theme from "app/global/theme"
 import { getDateTimestamp } from "app/logics/date"
 import { useState } from "react"
+import { useWindowDimensions } from "react-native"
 
 const _DemoScreen = () => {
+  const { width } = useWindowDimensions()
   const [isShowAlert, setIsShowAlert] = useState(false)
   const [isShowAccordion, setIsShowAccordion] = useState(false)
   const [isShowCamera, setIsShowCamera] = useState(false)
@@ -69,7 +72,26 @@ const _DemoScreen = () => {
             <View className="h-8" />
             <Label bold>All image include cache & placeholder.</Label>
             <View className="h-4" />
-            <Image contentFit="cover" style={{ borderRadius: 14, width: 200, height: 200 }} source={{ uri: 'https://i.pinimg.com/originals/ec/b9/2d/ecb92d18c7855c986a5571c1b6f7cad2.jpg' }} />
+            <Image
+              contentFit="cover"
+              style={{ borderRadius: 14, width: 200, height: 200 }}
+              source={{ uri: 'https://i.pinimg.com/originals/ec/b9/2d/ecb92d18c7855c986a5571c1b6f7cad2.jpg' }}
+            />
+            <View className="h-4" />
+            <Label bold>Carosel (Images View)</Label>
+            <View className="h-4" />
+            <ImagesView
+              height={width * 0.9 / 2}
+              width={width * 0.9}
+              images={[
+                { uri: 'https://picsum.photos/id/11/200/300' },
+                { uri: 'https://picsum.photos/id/22/200/300' },
+                { uri: 'https://picsum.photos/id/33/200/300' },
+                { uri: 'https://picsum.photos/id/44/200/300' },
+                { uri: 'https://picsum.photos/id/55/200/300' },
+              ]}
+              contentFit="contain"
+            />
             <Text bold className="mt-10 text-xl text-primary">Many Icons Out there!</Text>
             <View className="flex flex-row p-4">
               <Icon.Phone size={40} color={theme.colors.warning} />

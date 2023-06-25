@@ -1,5 +1,4 @@
 import { styled } from 'nativewind'
-import { Image as _Image } from 'expo-image'
 import { ComponentProps, memo } from 'react'
 import {
   View as _View,
@@ -11,6 +10,10 @@ import {
   Image as _BaseImage,
   SafeAreaView as _SafeAreaView,
 } from 'react-native'
+import dynamic from 'next/dynamic'
+
+// @ts-ignore
+const _Image = dynamic(() => import('expo-image').then((mod) => mod.Image), { ssr: false })
 
 const DefaultText = styled(_Text)
 type TextProps = ComponentProps<typeof DefaultText> & { bold?: boolean }
