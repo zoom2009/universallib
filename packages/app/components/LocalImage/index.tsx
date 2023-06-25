@@ -1,0 +1,1 @@
+export { LocalImage } from './index.web'

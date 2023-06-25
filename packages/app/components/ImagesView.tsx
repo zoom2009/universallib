@@ -4,6 +4,10 @@ import { Platform } from 'react-native'
 import { ACTIVE_OPACITY } from 'app/components/Button'
 import { Icon } from 'app/components/Icon'
 import theme from 'app/global/theme'
+import dynamic from 'next/dynamic'
+
+// @ts-ignore
+const _Pinchable = dynamic(() => import('react-native-pinchable'), { ssr: false })
 
 type TImage = { uri: string } | string
 interface IImagesViewProps {
@@ -33,7 +37,7 @@ export const ImagesView = (props: IImagesViewProps) => {
     isShowDot = true,
   } = props
 
-  const Pinchable = (Platform.OS !== 'web' && mobileZoomable) ? require('react-native-pinchable') : React.Fragment
+  const Pinchable = (Platform.OS !== 'web' && mobileZoomable) ? _Pinchable : React.Fragment
   const [Carousel, setCarousel] = useState(undefined)
   const [currentIndex, setCurrentIndex] = useState(0)
   const caroselRef = useRef()
@@ -69,10 +73,10 @@ export const ImagesView = (props: IImagesViewProps) => {
     import('react-native-reanimated-carousel').then(val => setCarousel(val.default))
   }, [])
 
-  if (Carousel === undefined) return null
-
   const isCanPrevious = loop || (!loop && currentIndex > 0)
   const isCanNext = loop || (!loop && currentIndex < images.length - 1)
+
+  if (Carousel === undefined) return null
 
   return (
     <View style={{ width, height }} className="justify-center items-center relative">
@@ -94,13 +98,13 @@ export const ImagesView = (props: IImagesViewProps) => {
       <View className="absolute bottom-1.5 z-50 flex flex-row">
         {dotArray.map((dotIndex) => {
           const isActive = currentIndex === dotIndex
-          return <View style={{ backgroundColor: isActive ? theme.colors.success : theme.colors.muted }} className="w-[12px] h-[12px] rounded-full mx-1 border-[1px] border-[#eee]" />
+          return <View key={`${dotIndex}`} style={{ backgroundColor: isActive ? theme.colors.success : theme.colors.muted }} className="w-[12px] h-[12px] rounded-full mx-1 border-[1px] border-[#eee]" />
 }        )}
       </View>
       )}
       {/* @ts-ignore */}
       <Carousel
-        ref={caroselRef}
+        ref={caroselRef as any}
         loop={loop}
         width={width}
         height={height}
@@ -111,15 +115,15 @@ export const ImagesView = (props: IImagesViewProps) => {
         scrollAnimationDuration={1000}
         onSnapToItem={setCurrentIndex}
         renderItem={({ item }) => (
-          <Pinchable>
-            <View style={{ backgroundColor }} className="w-full h-full justify-center items-center rounded-xl px-4 pt-4 pb-6">
+          <View style={{ backgroundColor }} className="w-full h-full justify-center items-center rounded-xl px-4 pt-4 pb-6">
+            <Pinchable>
               <Image
                 contentFit={contentFit}
-                style={{ width: '100%', height: '100%', borderRadius: 10 }}
+                style={{ width, height, borderRadius: 10 }}
                 source={item as any}
               />
-            </View>
-          </Pinchable>
+            </Pinchable>
+          </View>
         )}
       />
     </View>
