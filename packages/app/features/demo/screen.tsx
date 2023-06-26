@@ -28,6 +28,7 @@ import { useWindowDimensions } from "react-native"
 import { LocalImage } from "app/components/LocalImage"
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { Layout } from "app/components/Layout"
+import { FullModal } from "app/components/FullModal"
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -36,6 +37,7 @@ const _DemoScreen = () => {
   const [isShowAccordion, setIsShowAccordion] = useState(false)
   const [isShowCamera, setIsShowCamera] = useState(false)
   const [isShowPopover, setIsShowPopover] = useState(false)
+  const [isShowModal, setIsShowModal] = useState(false)
 
   const chartData = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
 
@@ -43,6 +45,12 @@ const _DemoScreen = () => {
     <AvoidSoftInputView>
       <View className="bg-info-background flex flex-1">
         <View className="mx-auto flex flex-1 flex-col item-center">
+          <FullModal
+            visible={isShowModal}
+            onClose={() => setIsShowModal(false)}
+          >
+            <Text bold className="text-6xl text-red-400 text-center py-10">Hello Modal</Text>
+          </FullModal>
           <CameraPicker
             onClose={() => setIsShowCamera(false)}
             isShowCamera={isShowCamera}
@@ -233,9 +241,9 @@ const _DemoScreen = () => {
             />
             <View className="h-8" />
             <Button
-              onPress={() => {}}
+              onPress={() => setIsShowModal(true)}
               type="info"
-              text="Full Info Button"
+              text="Full Info Button <Show Modal>"
               bold
               isFull
             />
@@ -499,12 +507,18 @@ const _DemoScreen = () => {
             <View className="h-8" />
             <Label bold>Skeleton</Label>
             <View className="h-8" />
-            <View className="bg-red-300 py-10">
-              <Skeleton borderRadius={10} isCenter width={200} height={200} />
-              <View className="h-4" />
-              <Skeleton borderRadius={20} isCenter width={200} height={20} />
-              <View className="h-4" />
-              <Skeleton borderRadius={20} isCenter width={150} height={20} />
+            <View className="bg-white p-10 flex flex-row">
+              <View>
+                <Skeleton borderRadius={10} width={200} height={200} />
+                <View className="h-4" />
+                <Skeleton borderRadius={20} width={200} height={20} />
+                <View className="h-4" />
+                <Skeleton borderRadius={20} width={150} height={20} />
+              </View>
+              <View className="px-4">
+                <Skeleton borderRadius={100} width={100} height={100} />
+                <View className="h-4" />
+              </View>
             </View>
           </ScrollView>
         </View>
