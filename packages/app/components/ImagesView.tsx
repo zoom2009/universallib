@@ -98,7 +98,7 @@ export const ImagesView = (props: IImagesViewProps) => {
       <View className="absolute bottom-1.5 z-50 flex flex-row">
         {dotArray.map((dotIndex) => {
           const isActive = currentIndex === dotIndex
-          return <View key={`${dotIndex}`} style={{ backgroundColor: isActive ? theme.colors.success : theme.colors.muted }} className="w-[12px] h-[12px] rounded-full mx-1 border-[1px] border-[#eee]" />
+          return <View key={`${dotIndex}`} style={{ backgroundColor: isActive ? theme.colors.success : theme.colors.muted }} className="w-[8px] h-[8px] md:w-[12px] md:h-[12px] rounded-full mx-1 border-[1px] border-[#eee]" />
 }        )}
       </View>
       )}

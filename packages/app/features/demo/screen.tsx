@@ -26,6 +26,7 @@ import { getDateTimestamp } from "app/logics/date"
 import { useState } from "react"
 import { useWindowDimensions } from "react-native"
 import { LocalImage } from "app/components/LocalImage"
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -427,8 +428,11 @@ const _DemoScreen = () => {
   )
 }
 
+// with provider here
 export const DemoScreen = () => (
-  <ToastRootProvider>
-    <_DemoScreen />
-  </ToastRootProvider>
+  <GestureHandlerRootView>
+    <ToastRootProvider>
+      <_DemoScreen />
+    </ToastRootProvider>
+  </GestureHandlerRootView>
 )
