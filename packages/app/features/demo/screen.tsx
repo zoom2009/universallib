@@ -27,6 +27,7 @@ import { useState } from "react"
 import { useWindowDimensions } from "react-native"
 import { LocalImage } from "app/components/LocalImage"
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { Layout } from "app/components/Layout"
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -83,6 +84,67 @@ const _DemoScreen = () => {
               This is Label 4 (with textClassName & required)
             </Label>
             <View className="h-8" />
+            <Label bold>Resposive Layout</Label>
+            <View>
+              <View className="p-4 my-4 w-full border-2 border-[#ccc] rounded-xl">
+                <Label bold>2_1</Label>
+                <View className="h-2" />
+                <Layout.Row>
+                  <Layout._2_1 className="border-[1px] p-4">
+                    <Text>1</Text>
+                  </Layout._2_1>
+                  <Layout._2_1 className="border-[1px] p-4">
+                    <Text>2</Text>
+                  </Layout._2_1>
+                  <Layout._2_1 className="border-[1px] p-4">
+                    <Text>3</Text>
+                  </Layout._2_1>
+                </Layout.Row>
+              </View>
+              <View className="p-4 my-4 w-full border-2 border-[#ccc] rounded-xl">
+                <Label bold>_8_6_4_2_1</Label>
+                <View className="h-2" />
+                <Layout.Row>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>1</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>2</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>3</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>4</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>5</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>6</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>7</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>8</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>9</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>10</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>11</Text>
+                  </Layout._8_6_4_2_1>
+                  <Layout._8_6_4_2_1 className="border-[1px] p-4">
+                    <Text>12</Text>
+                  </Layout._8_6_4_2_1>
+                </Layout.Row>
+              </View>
+            </View>
+            <View className="h-8" />
             <Label bold>All image include cache & placeholder.</Label>
             <View className="h-4" />
             <View className="justify-around items-center flex flex-row">
@@ -97,7 +159,7 @@ const _DemoScreen = () => {
                 source={require('app/assets/mockImages/mock-cat.jpg')}
               />
             </View>
-            <View className="h-4" />
+            <View className="h-8" />
             <Label bold>Carosel (Images View)</Label>
             <View className="h-4" />
             <View className="justify-center items-center">
@@ -105,11 +167,11 @@ const _DemoScreen = () => {
                 height={width * 0.8 / 2}
                 width={width * 0.8}
                 images={[
-                  { uri: 'https://picsum.photos/id/11/200/300' },
-                  { uri: 'https://picsum.photos/id/22/200/300' },
-                  { uri: 'https://picsum.photos/id/33/200/300' },
-                  { uri: 'https://picsum.photos/id/44/200/300' },
-                  { uri: 'https://picsum.photos/id/55/200/300' },
+                  { uri: 'https://picsum.photos/id/11/800/1000' },
+                  { uri: 'https://picsum.photos/id/22/800/1000' },
+                  { uri: 'https://picsum.photos/id/33/800/1000' },
+                  { uri: 'https://picsum.photos/id/44/800/1000' },
+                  { uri: 'https://picsum.photos/id/55/800/1000' },
                 ]}
                 contentFit="contain"
               />
@@ -345,6 +407,9 @@ const _DemoScreen = () => {
               required
               errorMessage="Ea nostrud ullamco ex id."
             />
+            <View className="h-12" />
+            <Label bold>Map Picker</Label>
+            <View className="-mt-4" />
             <MapPicker
               defaultLocation={{
                 lat: 13.736717,
@@ -406,6 +471,8 @@ const _DemoScreen = () => {
               />
             </View>
             <View className="h-8" />
+            <Label bold>Pagination</Label>
+            <View className="h-4" />
             <Pagination
               current={10}
               total={39}
