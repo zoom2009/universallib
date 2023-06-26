@@ -102,6 +102,24 @@ const _DemoScreen = () => {
                 </Layout.Wrapper>
               </View>
               <View className="p-4 my-4 w-full border-2 border-[#ccc] rounded-xl">
+                <Label bold>4_2</Label>
+                <View className="h-2" />
+                <Layout.Wrapper>
+                  <Layout._4_2 className="border-[1px] p-4">
+                    <Text>1</Text>
+                  </Layout._4_2>
+                  <Layout._4_2 className="border-[1px] p-4">
+                    <Text>2</Text>
+                  </Layout._4_2>
+                  <Layout._4_2 className="border-[1px] p-4">
+                    <Text>3</Text>
+                  </Layout._4_2>
+                  <Layout._4_2 className="border-[1px] p-4">
+                    <Text>4</Text>
+                  </Layout._4_2>
+                </Layout.Wrapper>
+              </View>
+              <View className="p-4 my-4 w-full border-2 border-[#ccc] rounded-xl">
                 <Label bold>_8_6_4_2_1</Label>
                 <View className="h-2" />
                 <Layout.Wrapper>

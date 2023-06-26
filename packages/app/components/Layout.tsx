@@ -25,7 +25,7 @@ const Wrapper = (props: ILayoutProps & { center?: boolean }) => (
 const _2_1 = (props: ILayoutProps & { gapSize?: number }) => (
   <View
     style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-    className={clsx(['flex w-full md:w-[50%]', !props.gapSize && 'px-4', props.className])}
+    className={clsx(['flex w-full sm:w-[50%]', !props.gapSize && 'px-4', props.className])}
   >
     {props.children}
   </View>
@@ -35,7 +35,7 @@ const _3_1 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-full md:w-[33.33%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-full sm:w-[33.33%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -46,7 +46,7 @@ const _4_2_1 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-full md:w-[50%] lg:w-[25%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-full sm:w-[50%] md:w-[25%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -57,7 +57,7 @@ const _4_2 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-[50%] md:w-[25%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-[50%] sm:w-[25%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -68,7 +68,7 @@ const _6_4_2_1 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-full md:w-[50%] lg:w-[25%] xl:w-[16.66%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-full sm:w-[50%] md:w-[25%] lg:w-[16.66%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -79,7 +79,7 @@ const _6_4_2 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-[50%] md:w-[25%] lg:w-[16.66%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-[50%] sm:w-[25%] md:w-[16.66%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -90,7 +90,7 @@ const _6_3_1 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-full md:w-[33.33%] lg:w-[16.66%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-full sm:w-[33.33%] md:w-[16.66%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -101,7 +101,7 @@ const _6_3 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-[33.33%] md:w-[16.66%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-[33.33%] sm:w-[16.66%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -112,7 +112,7 @@ const _8_6_4_2_1 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-full md:w-[50%] lg:w-[25%] xl:w-[16.66%] 2xl:w-[12.5%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-full sm:w-[50%] md:w-[25%] lg:w-[16.66%] xl:w-[12.5%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -123,7 +123,7 @@ const _8_6_4_2 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-[50%] md:w-[25%] lg:w-[16.66%] xl:w-[12.5%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-[50%] sm:w-[25%] md:w-[16.66%] lg:w-[12.5%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -134,7 +134,7 @@ const _8_6_4 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-[25%] md:w-[16.66%] lg:w-[12.5%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-[25%] sm:w-[16.66%] md:w-[12.5%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
@@ -145,7 +145,7 @@ const _8_4 = (props: ILayoutProps & { gapSize?: number }) => {
   return (
     <View
       style={[props.style, !!props.gapSize && { paddingHorizontal: props.gapSize }]}
-      className={clsx(['flex w-[25%] md:w-[12.5%]', !props.gapSize && 'px-4', props.className])}
+      className={clsx(['flex w-[25%] sm:w-[12.5%]', !props.gapSize && 'px-4', props.className])}
     >
       {props.children}
     </View>
