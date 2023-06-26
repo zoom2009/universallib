@@ -89,7 +89,7 @@ const _DemoScreen = () => {
               <View className="p-4 my-4 w-full border-2 border-[#ccc] rounded-xl">
                 <Label bold>2_1</Label>
                 <View className="h-2" />
-                <Layout.Row>
+                <Layout.Wrapper>
                   <Layout._2_1 className="border-[1px] p-4">
                     <Text>1</Text>
                   </Layout._2_1>
@@ -99,12 +99,12 @@ const _DemoScreen = () => {
                   <Layout._2_1 className="border-[1px] p-4">
                     <Text>3</Text>
                   </Layout._2_1>
-                </Layout.Row>
+                </Layout.Wrapper>
               </View>
               <View className="p-4 my-4 w-full border-2 border-[#ccc] rounded-xl">
                 <Label bold>_8_6_4_2_1</Label>
                 <View className="h-2" />
-                <Layout.Row>
+                <Layout.Wrapper>
                   <Layout._8_6_4_2_1 className="border-[1px] p-4">
                     <Text>1</Text>
                   </Layout._8_6_4_2_1>
@@ -141,7 +141,7 @@ const _DemoScreen = () => {
                   <Layout._8_6_4_2_1 className="border-[1px] p-4">
                     <Text>12</Text>
                   </Layout._8_6_4_2_1>
-                </Layout.Row>
+                </Layout.Wrapper>
               </View>
             </View>
             <View className="h-8" />

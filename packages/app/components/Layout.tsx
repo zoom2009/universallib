@@ -9,7 +9,7 @@ interface ILayoutProps {
   children?: ReactNode
 }
 
-const Row = (props: ILayoutProps & { center?: boolean }) => (
+const Wrapper = (props: ILayoutProps & { center?: boolean }) => (
   <View
     style={props.style}
     className={clsx([
@@ -153,7 +153,7 @@ const _8_4 = (props: ILayoutProps & { gapSize?: number }) => {
 }
 
 export const Layout = {
-  Row,
+  Wrapper,
   _2_1,
   _3_1,
   _4_2_1,
