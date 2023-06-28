@@ -3,6 +3,7 @@
   "name": "app",
   "main": "index.ts",
   "dependencies": {
+    "@nandorojo/anchor": "^0.4.3",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "d3-shape": "^3.2.0",

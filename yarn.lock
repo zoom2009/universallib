@@ -3144,6 +3144,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nandorojo/anchor@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "@nandorojo/anchor@npm:0.4.3"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 0626da7f2dc385416927f36033da548bb4937081420f9ffaa53240d2ae00c2f284c5dd7d9b41dbd815d820034fc5a58d2f529ea16e9fb69d29f1cc3ff208672a
+  languageName: node
+  linkType: hard
+
 "@next/env@npm:13.2.4":
   version: 13.2.4
   resolution: "@next/env@npm:13.2.4"
@@ -4358,6 +4368,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "app@workspace:packages/app"
   dependencies:
+    "@nandorojo/anchor": ^0.4.3
     "@react-navigation/native": ^6.0.8
     "@react-navigation/native-stack": ^6.5.0
     "@types/react-native-svg-charts": ^5.0.12

@@ -6,7 +6,8 @@ import { Button } from "app/components/Button"
 import { CameraPicker } from "app/components/CameraPicker"
 import { Grid, LineChart, XAxis } from "app/components/Chart"
 import { CheckBox } from "app/components/CheckBox"
-import { Image, ScrollView, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
+import { ScrollView, useScrollTo, Target } from '@nandorojo/anchor'
+import { Image, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
 import { DatePicker } from "app/components/DatePicker"
 import { Dropdown } from "app/components/Dropdown"
 import { Icon } from "app/components/Icon"
@@ -29,6 +30,19 @@ import { LocalImage } from "app/components/LocalImage"
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { Layout } from "app/components/Layout"
 import { FullModal } from "app/components/FullModal"
+
+const CustomScrollTo = () => {
+  const { scrollTo } = useScrollTo()
+  const onPress = () => {
+    scrollTo('bottom-content', { animated: true, offset: -10 })
+  }
+
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <Text className="text-xl text-primary pb-4">Scroll down</Text>
+    </TouchableOpacity>
+  )
+}
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -79,6 +93,7 @@ const _DemoScreen = () => {
             }}
             style={{ paddingHorizontal: '5%' }}
           >
+            <CustomScrollTo />
             <Label>
               This is Label 1
             </Label>
@@ -521,6 +536,8 @@ const _DemoScreen = () => {
                 </Layout._2_1>
               </Layout.Wrapper>
             </View>
+            <Target name="bottom-content">
+            </Target>
           </ScrollView>
         </View>
       </View>
