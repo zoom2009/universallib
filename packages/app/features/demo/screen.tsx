@@ -507,18 +507,19 @@ const _DemoScreen = () => {
             <View className="h-8" />
             <Label bold>Skeleton</Label>
             <View className="h-8" />
-            <View className="bg-white p-10 flex flex-row">
-              <View>
-                <Skeleton borderRadius={10} width={200} height={200} />
-                <View className="h-4" />
-                <Skeleton borderRadius={20} width={200} height={20} />
-                <View className="h-4" />
-                <Skeleton borderRadius={20} width={150} height={20} />
-              </View>
-              <View className="px-4">
-                <Skeleton borderRadius={100} width={100} height={100} />
-                <View className="h-4" />
-              </View>
+            <View className="bg-white pb-6 px-10 flex flex-row">
+              <Layout.Wrapper>
+                <Layout._2_1 className="mt-6">
+                  <Skeleton borderRadius={10} width={200} height={200} />
+                  <View className="h-4" />
+                  <Skeleton borderRadius={20} width={200} height={20} />
+                  <View className="h-4" />
+                  <Skeleton borderRadius={20} width={150} height={20} />
+                </Layout._2_1>
+                <Layout._2_1 className="mt-6">
+                  <Skeleton borderRadius={100} width={100} height={100} />
+                </Layout._2_1>
+              </Layout.Wrapper>
             </View>
           </ScrollView>
         </View>

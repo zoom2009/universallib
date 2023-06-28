@@ -15,7 +15,7 @@
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "native": "cd apps/expo && yarn start",
+    "native": "cd apps/expo && npx expo run:ios",
     "native-dev": "cd apps/expo && yarn start-dev",
     "web": "cd apps/next && yarn next"
   },
