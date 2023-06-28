@@ -6,6 +6,7 @@ import { View } from 'app/components/ComponentWithTailwind'
 import { ErrorMessage } from 'app/components/ErrorMessage'
 import { Label } from 'app/components/Label'
 import { Platform } from 'react-native'
+import { isEmpty } from 'app/logics/validate'
 
 type TOption = {
   key: string
@@ -42,6 +43,10 @@ export const Dropdown = (props: IDropdownProps) => {
 
   const [isFocus, setIsFocus] = useState(false)
 
+  const onChangeEffectFunction = (key: string) => {
+    !isEmpty(key) && onChangeEffect(key)
+  }
+
   return(
     <View className="w-full">
       {label && (
@@ -56,7 +61,7 @@ export const Dropdown = (props: IDropdownProps) => {
       )}
       <SelectList
         disabledItemStyles={{ backgroundColor: theme.colors.disabled }}
-        setSelected={onChangeEffect}
+        setSelected={onChangeEffectFunction}
         defaultOption={value}
         notFoundText="ไม่พบข้อมูล"
         data={options}

@@ -3144,16 +3144,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nandorojo/anchor@npm:^0.4.3":
-  version: 0.4.3
-  resolution: "@nandorojo/anchor@npm:0.4.3"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 0626da7f2dc385416927f36033da548bb4937081420f9ffaa53240d2ae00c2f284c5dd7d9b41dbd815d820034fc5a58d2f529ea16e9fb69d29f1cc3ff208672a
-  languageName: node
-  linkType: hard
-
 "@next/env@npm:13.2.4":
   version: 13.2.4
   resolution: "@next/env@npm:13.2.4"
@@ -4368,7 +4358,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "app@workspace:packages/app"
   dependencies:
-    "@nandorojo/anchor": ^0.4.3
     "@react-navigation/native": ^6.0.8
     "@react-navigation/native-stack": ^6.5.0
     "@types/react-native-svg-charts": ^5.0.12
@@ -4383,6 +4372,7 @@ __metadata:
     react-native-svg-charts: ^5.4.0
     react-native-table-component: ^1.2.2
     react-native-walkthrough-tooltip: ^1.5.0
+    react-thai-address: ^1.0.6
     solito: 3.0.0
   languageName: unknown
   linkType: soft
@@ -12745,6 +12735,16 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
   checksum: 6052c7e3e9627485120ebd8257f128aad8f56386fe8d42374b7743eac1be457c33506d153c7886b4e32923c0c352d402ab805ef9ca02dbcd8393b2bdeb6e5af8
+  languageName: node
+  linkType: hard
+
+"react-thai-address@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "react-thai-address@npm:1.0.6"
+  peerDependencies:
+    react: ">=0.14"
+    react-dom: ">=0.14"
+  checksum: 6b3804df35f85603e33129c51a60d6c713fb1cb9f2831a0a85114361deac969b83660465d24863d3c41eade0161e9c9cb4aeff71d242e3d1e77adb50414763ed
   languageName: node
   linkType: hard
 

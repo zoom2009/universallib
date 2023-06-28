@@ -9,11 +9,12 @@ interface ILayoutProps {
   children?: ReactNode
 }
 
-const Wrapper = (props: ILayoutProps & { center?: boolean }) => (
+const Wrapper = (props: ILayoutProps & { center?: boolean, top?: boolean }) => (
   <View
     style={props.style}
     className={clsx([
-      'flex flex-row flex-wrap items-center',
+      'flex flex-row flex-wrap',
+      !props.top ? 'items-center' : 'items-start',
       props.center && 'justify-center',
       props.className,
     ])}

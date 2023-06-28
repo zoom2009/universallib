@@ -6,8 +6,7 @@ import { Button } from "app/components/Button"
 import { CameraPicker } from "app/components/CameraPicker"
 import { Grid, LineChart, XAxis } from "app/components/Chart"
 import { CheckBox } from "app/components/CheckBox"
-import { ScrollView, useScrollTo, Target } from '@nandorojo/anchor'
-import { Image, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
+import { Image, ScrollView, Text, TouchableOpacity, View } from "app/components/ComponentWithTailwind"
 import { DatePicker } from "app/components/DatePicker"
 import { Dropdown } from "app/components/Dropdown"
 import { Icon } from "app/components/Icon"
@@ -30,19 +29,7 @@ import { LocalImage } from "app/components/LocalImage"
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { Layout } from "app/components/Layout"
 import { FullModal } from "app/components/FullModal"
-
-const CustomScrollTo = () => {
-  const { scrollTo } = useScrollTo()
-  const onPress = () => {
-    scrollTo('bottom-content', { animated: true, offset: -10 })
-  }
-
-  return (
-    <TouchableOpacity onPress={onPress}>
-      <Text className="text-xl text-primary pb-4">Scroll down</Text>
-    </TouchableOpacity>
-  )
-}
+import { ThaiAddressAutoComplete } from "app/components/ThaiAddressAutoComplete"
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -93,7 +80,6 @@ const _DemoScreen = () => {
             }}
             style={{ paddingHorizontal: '5%' }}
           >
-            <CustomScrollTo />
             <Label>
               This is Label 1
             </Label>
@@ -448,9 +434,22 @@ const _DemoScreen = () => {
               required
               errorMessage="Ea nostrud ullamco ex id."
             />
-            <View className="h-12" />
+            <View className="h-10" />
+            <ThaiAddressAutoComplete
+              label="Your Thai Address"
+              currentState={{}}
+              errors={{
+                address: '',
+                province: '',
+                district: '',
+                subDistrict: '',
+                zipcode: '',
+              }}
+              onChangeEffect={(key) => (props) => console.log('key:', props)}
+            />
+            <View className="h-10" />
             <Label bold>Map Picker</Label>
-            <View className="-mt-4" />
+            <View className="web:-mt-4" />
             <MapPicker
               defaultLocation={{
                 lat: 13.736717,
@@ -536,8 +535,6 @@ const _DemoScreen = () => {
                 </Layout._2_1>
               </Layout.Wrapper>
             </View>
-            <Target name="bottom-content">
-            </Target>
           </ScrollView>
         </View>
       </View>

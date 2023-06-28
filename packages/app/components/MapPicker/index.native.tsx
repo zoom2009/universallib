@@ -3,15 +3,13 @@ import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 import * as Location from 'expo-location'
 import * as R from 'ramda'
 import { GoogleAutoComplete } from 'react-native-google-autocomplete'
-import { View } from '../ComponentWithTailwind'
+import { View } from 'app/components/ComponentWithTailwind'
 import { isEmpty } from 'app/logics/validate'
-import { useWindowDimensions } from 'react-native'
 import { Dropdown } from 'app/components/Dropdown'
 import { Input } from 'app/components/Input'
 import { IMapPickerProps } from './interface'
 
 export const MapPicker = (props: IMapPickerProps) => {
-  const { width } = useWindowDimensions()
   const { defaultLocation, googleMapsApiKey, onChangeEffect, value } = props
   const [center, setCenter] = useState({ lat: defaultLocation.lat, lng: defaultLocation.lng })
   const [marker, setMarker] = useState({ lat: defaultLocation.lat, lng: defaultLocation.lng })
@@ -154,12 +152,11 @@ export const MapPicker = (props: IMapPickerProps) => {
           )
         }}
       </GoogleAutoComplete>
-      <View style={{ marginTop: 14, width: width * 0.9, height: 450, alignItems: 'center' }}>
+      <View style={{ marginTop: 20, width: '100%', height: 450, alignItems: 'center' }}>
         <MapView
           onMapReady={onMapReady}
-          // provider={Platform.OS === 'ios' ? PROVIDER_DEFAULT : PROVIDER_GOOGLE}
           provider={PROVIDER_GOOGLE}
-          style={{ width: width * 0.9, height: 450, borderRadius: 10 }}
+          style={{ width: '100%', height: 450, borderRadius: 10 }}
           region={isReady ? {
             latitude: center.lat,
             longitude: center.lng,
