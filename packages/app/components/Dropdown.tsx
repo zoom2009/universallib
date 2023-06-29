@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SelectList } from 'react-native-dropdown-select-list'
 import { Icon } from 'app/components/Icon'
 import theme from 'app/global/theme'
@@ -41,11 +41,21 @@ export const Dropdown = (props: IDropdownProps) => {
     placeholder = 'พิมพ์เพื่อค้นหา',
   } = props
 
+  const [isReady, setIsReady] = useState(false)
   const [isFocus, setIsFocus] = useState(false)
 
   const onChangeEffectFunction = (key: string) => {
-    !isEmpty(key) && onChangeEffect(key)
+    if (isReady && !isEmpty(key)) {
+      onChangeEffect(key)
+    }
   }
+
+  useEffect(() => {
+    setIsReady(true)
+    return () => {
+      setIsReady(false)
+    }
+  }, [])
 
   return(
     <View className="w-full">

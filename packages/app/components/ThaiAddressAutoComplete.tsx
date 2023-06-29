@@ -5,7 +5,8 @@ import { useState } from 'react'
 import { Dropdown } from 'app/components/Dropdown'
 import { Label } from 'app/components/Label'
 import { Input } from 'app/components/Input'
-import { Layout } from './Layout'
+import { Layout } from 'app/components/Layout'
+import { isEmpty } from 'app/logics/validate'
 
 type TOnSelect = {
   subDistrict: string
@@ -32,7 +33,13 @@ interface IThaiAddressAutoCompleteProps {
     subDistrict?: { key: string, value: string }
     zipcode?: { key: string, value: string }
   }
-  onChangeEffect: (key: 'address' | 'province' | 'district' | 'subDistrict' | 'zipcode') => (value: any) => void
+  onChangeEffect: (addressFields: {
+    address?: string
+    province?: { key: string, value: string }
+    district?: { key: string, value: string }
+    subDistrict?: { key: string, value: string }
+    zipcode?: { key: string, value: string }
+  }) => void
   CustomHeaderSection?: any
   errors: {
     address: string
@@ -112,12 +119,24 @@ export const ThaiAddressAutoComplete = (props: IThaiAddressAutoCompleteProps) =>
 
   const onSelect = (fullAddress: any) => {
     const { subDistrict, district, province, zipcode } = fullAddress
-    console.log('subDistrict, district, province, zipcode:', subDistrict, district, province, zipcode)
+    if (
+      !isEmpty(subDistrict) &&
+      !isEmpty(district) &&
+      !isEmpty(province) &&
+      !isEmpty(zipcode)
+    ) {
+      onChangeEffect({
+        subDistrict: { key: subDistrict, value: subDistrict },
+        district: { key: district, value: district },
+        province: { key: province, value: province },
+        zipcode: { key: zipcode, value: zipcode },
+      })
+    }
   }
 
 
   const onChangeAddress = (text: string) => {
-    onChangeEffect('address')(text)
+    onChangeEffect({ address: text })
   }
 
   return (

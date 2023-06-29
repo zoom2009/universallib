@@ -42,6 +42,14 @@ const _DemoScreen = () => {
 
   const chartData = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
 
+  const [address, setAddress] = useState({
+    address: '',
+    subDistrict: { key: '1', value: '' },
+    district: { key: '2', value: '' },
+    province: { key: '3', value: '' },
+    zipcode: { key: '4', value: '' },
+  })
+
   return (
     <AvoidSoftInputView>
       <View className="bg-info-background flex flex-1">
@@ -55,7 +63,7 @@ const _DemoScreen = () => {
           <CameraPicker
             onClose={() => setIsShowCamera(false)}
             isShowCamera={isShowCamera}
-            onChangeEffect={console.log}  
+            onChangeEffect={console.log}
           />
           <Alert
             show={isShowAlert}
@@ -437,7 +445,7 @@ const _DemoScreen = () => {
             <View className="h-10" />
             <ThaiAddressAutoComplete
               label="Your Thai Address"
-              currentState={{}}
+              currentState={address}
               errors={{
                 address: '',
                 province: '',
@@ -445,7 +453,12 @@ const _DemoScreen = () => {
                 subDistrict: '',
                 zipcode: '',
               }}
-              onChangeEffect={(key) => (props) => console.log('key:', props)}
+              onChangeEffect={(values) => {
+                setAddress({
+                  ...address,
+                  ...values,
+                })
+              }}
             />
             <View className="h-10" />
             <Label bold>Map Picker</Label>
