@@ -8,6 +8,5 @@ export const scrollTo = (props: IScrollToProps) => {
 
 export const getPositionView = (event: LayoutChangeEvent) => {
   const layout = event.nativeEvent.layout
-  console.log('layout:', layout)
   return { x: layout.x, y: layout.y }
 }
