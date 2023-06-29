@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Accordion } from "app/components/Accordion"
 import { Alert } from "app/components/Alert"
 import { AvoidSoftInputView } from "app/components/AvoidSoftInputView"
@@ -30,6 +30,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { Layout } from "app/components/Layout"
 import { FullModal } from "app/components/FullModal"
 import { ThaiAddressAutoComplete } from "app/components/ThaiAddressAutoComplete"
+import { getPositionView, scrollTo } from "app/functions/scrollTo/index"
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -39,6 +40,7 @@ const _DemoScreen = () => {
   const [isShowCamera, setIsShowCamera] = useState(false)
   const [isShowPopover, setIsShowPopover] = useState(false)
   const [isShowModal, setIsShowModal] = useState(false)
+  const [bottomPos, setBottomPos] = useState({ x: 0, y: 0 })
 
   const chartData = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
 
@@ -49,6 +51,8 @@ const _DemoScreen = () => {
     province: { key: '3', value: '' },
     zipcode: { key: '4', value: '' },
   })
+
+  const scrollViewRef = useRef()
 
   return (
     <AvoidSoftInputView>
@@ -79,6 +83,7 @@ const _DemoScreen = () => {
             onConfirmPressed={() => setIsShowAlert(false)}
           />
           <ScrollView
+            ref={scrollViewRef}
             contentContainerStyle={{
               flexGrow: 1,
               paddingTop: 30,
@@ -88,6 +93,11 @@ const _DemoScreen = () => {
             }}
             style={{ paddingHorizontal: '5%' }}
           >
+            <TouchableOpacity
+              onPress={() => scrollTo({ scrollViewRef, x: bottomPos.x, y: bottomPos.y })}
+            >
+              <Text className="text-primary text-2xl mb-4">Scroll To Bottom</Text>
+            </TouchableOpacity>
             <Label>
               This is Label 1
             </Label>
@@ -534,7 +544,13 @@ const _DemoScreen = () => {
             <View className="h-8" />
             <Label bold>Skeleton</Label>
             <View className="h-8" />
-            <View className="bg-white pb-6 px-10 flex flex-row">
+            <View
+              onLayout={(e) => {
+                const { x, y } = getPositionView(e)
+                setBottomPos({ x, y })
+              }}
+              className="bg-white pb-6 px-10 flex flex-row"
+            >
               <Layout.Wrapper>
                 <Layout._2_1 className="mt-6">
                   <Skeleton borderRadius={10} width={200} height={200} />
