@@ -34,6 +34,7 @@ import { getPositionView, scrollTo } from "app/functions/scrollTo/index"
 import { LoadingSpinnerOverlay } from "app/components/LoadingSpinnerOverlay"
 import { Drawer } from "app/components/Drawer"
 import { OutsidePressHandlerProvider } from "app/components/OutsidePressHandler"
+import { Lottie } from "app/components/Lottie"
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -563,6 +564,15 @@ const _DemoScreen = () => {
               current={10}
               total={39}
               onPageChange={console.log}
+            />
+            <View className="h-8" />
+            <Label bold>Lottie</Label>
+            <Lottie
+              autoplay
+              loop
+              width={200}
+              height={200}
+              source={require('../../assets/mockLottie/cat.json')}
             />
             <View className="h-8" />
             <Label bold>Skeleton</Label>
