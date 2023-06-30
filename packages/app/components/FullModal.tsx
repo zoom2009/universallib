@@ -8,7 +8,7 @@ import { ACTIVE_OPACITY } from "./Button"
 interface IFullModal {
   children: ReactNode
   visible: boolean
-  onClose: () => void
+  onClose?: () => void
   showClose?: boolean
   animationType?: 'none' | 'slide' | 'fade'
 }

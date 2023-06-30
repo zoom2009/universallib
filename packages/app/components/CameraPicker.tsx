@@ -24,7 +24,7 @@ export const CameraPicker = (props: ICameraPickerProps) => {
 
   const insets = getInsets()
   const { width } = useWindowDimensions()
-  const height = Math.round((width * 4) / 3) - (insets.top + insets.bottom)
+  const height = Math.round((width * 4) / 3) - (insets.top + insets.bottom) - 100
 
   type CameraModuleType = typeof import('expo-camera')
   const CameraModule: CameraModuleType = !isSSR() ? require('expo-camera') : undefined
