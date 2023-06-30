@@ -574,7 +574,7 @@ const _DemoScreen = () => {
                   setBottomPos({ x, y })
                 }
               }}
-              className="bg-white pb-6 px-10 flex flex-row"
+              className="bg-white pb-6 px-10"
             >
               <Layout.Wrapper>
                 <Layout._2_1 className="mt-6">
