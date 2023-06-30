@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { Text, View } from 'app/components/ComponentWithTailwind'
 import { memo } from 'react'
+import { TextProps } from 'react-native'
 
 interface ILabelProps {
   children: string
@@ -9,6 +10,7 @@ interface ILabelProps {
   bold?: boolean
   textClassName?: string
   color?: string
+  otherTextProps?: TextProps
 }
 
 const _Label = (props: ILabelProps) => {
@@ -19,6 +21,7 @@ const _Label = (props: ILabelProps) => {
     bold = false,
     textClassName = '',
     color,
+    otherTextProps = {},
   } = props
 
   return (
@@ -31,6 +34,7 @@ const _Label = (props: ILabelProps) => {
           fullText && 'whitespace-pre',
           textClassName,
         ])}
+        {...otherTextProps}
       >
         {children}
         <Text className="pl-0.5 text-danger text-sm sm:text-lg lg:text-xl">
