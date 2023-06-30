@@ -10,9 +10,9 @@ import { Icon } from 'app/components/Icon'
 interface IDrawerProps {
   visible: boolean
   onClose: () => void
+  children: ReactNode
   backgroundColor?: string
   withClose?: boolean
-  children: ReactNode
 }
 
 export const Drawer = (props: IDrawerProps) => {
