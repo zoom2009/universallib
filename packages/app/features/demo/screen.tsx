@@ -35,6 +35,7 @@ import { LoadingSpinnerOverlay } from "app/components/LoadingSpinnerOverlay"
 import { Drawer } from "app/components/Drawer"
 import { OutsidePressHandlerProvider } from "app/components/OutsidePressHandler"
 import { Lottie } from "app/components/Lottie"
+import { WithState } from "app/components/WithState"
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -347,12 +348,14 @@ const _DemoScreen = () => {
               errorMessage="so sad you got some error message."
             />
             <View className="h-8" />
-            <Input
-              onChangeEffect={console.log}
-              value=""
-              bold
-              placeholder="Incididunt ullamco eu sunt exercitation pariatur deserunt tempor dolor."
-            />
+            <WithState>
+              <Input
+                onChangeEffect={console.log}
+                value=""
+                bold
+                placeholder="Incididunt ullamco eu sunt exercitation pariatur deserunt tempor dolor."
+              />
+            </WithState>
             <View className="h-8" />
             <Input
               onChangeEffect={console.log}
@@ -362,26 +365,30 @@ const _DemoScreen = () => {
               RightIcon={<Icon.GameController size={24} color="red" />}
             />
             <View className="h-8" />
-            <Input
-              label="Hi I'm Text Area"
-              isTextArea
-              onChangeEffect={console.log}
-              value=""
-              bold
-              required
-              placeholder="this text area"
-            />
+            <WithState>
+              <Input
+                label="Hi I'm Text Area"
+                isTextArea
+                onChangeEffect={console.log}
+                value=""
+                bold
+                required
+                placeholder="this text area"
+              />
+            </WithState>
             <View className="h-8" />
-            <Input
-              label="Mask Text input"
-              onChangeEffect={console.log}
-              value=""
-              bold
-              required
-              isMask
-              maskString="AAA-999"
-              placeholder="ABC-123"
-            />
+            <WithState>
+              <Input
+                label="Mask Text input"
+                onChangeEffect={console.log}
+                value=""
+                bold
+                required
+                isMask
+                maskString="AAA-999"
+                placeholder="ABC-123"
+              />
+            </WithState>
             <View className="h-8" />
             <Input
               label="Mask Text input currency"
