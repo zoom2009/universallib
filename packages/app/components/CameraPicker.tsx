@@ -23,13 +23,13 @@ export const CameraPicker = (props: ICameraPickerProps) => {
   } = props
 
   const insets = getInsets()
-  const { width } = useWindowDimensions()
-  const height = Math.round((width * 4) / 3) - (insets.top + insets.bottom) - 100
+  const { height, width } = useWindowDimensions()
 
   type CameraModuleType = typeof import('expo-camera')
   const CameraModule: CameraModuleType = !isSSR() ? require('expo-camera') : undefined
 
   const cameraRef: any = useRef()
+  const [radio, setRadio] = useState('')
   const [picture, setPicture] = useState<CameraCapturedPicture | undefined>(undefined)
   const [hasCameraPermission, setHasCameraPermission] = useState(false)
   const [cameraType, setCameraType] = useState<any>('front')
@@ -43,6 +43,15 @@ export const CameraPicker = (props: ICameraPickerProps) => {
       })
     }
   }
+
+  const prepareRatio = async () => {
+    if (Platform.OS === 'android') {
+      const DESIRED_RATIO = '16:9'
+      const ratios = await cameraRef.current.getSupportedRatiosAsync()
+      const ratio = ratios.find((ratio) => ratio === DESIRED_RATIO) || ratios[ratios.length - 1];
+      setRadio(ratio)
+    }
+}
 
   const onSave = () => {
     if (picture) {
@@ -106,9 +115,10 @@ export const CameraPicker = (props: ICameraPickerProps) => {
         )}
         {hasCameraPermission && !picture && !isSSR() && (
         <CameraModule.Camera
-          ratio="4:3"
-          style={{ flex: 1, width: '100%', height }}
+          ratio={radio}
+          style={{ flex: 1, width, height }}
           type={cameraType}
+          onCameraReady={prepareRatio}
           ref={cameraRef}
         >
           <SafeAreaView style={{ flex: 1, width: '100%' }}>
