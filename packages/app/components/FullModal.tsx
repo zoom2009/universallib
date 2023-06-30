@@ -21,6 +21,7 @@ export const FullModal = (props: IFullModal) => {
     showClose = true,
     animationType = 'slide',
   } = props
+
   const insets = getInsets()
 
   return (
@@ -33,9 +34,10 @@ export const FullModal = (props: IFullModal) => {
           <TouchableOpacity
             activeOpacity={ACTIVE_OPACITY}
             onPress={onClose}
-            className="absolute top-5 right-5 z-50"
+            style={{ top: insets.top + 8 }}
+            className="absolute right-5 z-50"
           >
-            <Icon.XCircle weight="fill" color="black" size={36} />
+            <Icon.X weight="fill" color="#888" size={36} />
           </TouchableOpacity>
         )}
         <View
