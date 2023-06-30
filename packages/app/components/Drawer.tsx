@@ -5,7 +5,7 @@ import { getInsets } from 'app/functions/getInsets'
 import { MotiView } from 'moti'
 import { OutsidePressHandler } from 'app/components/OutsidePressHandler'
 import { ACTIVE_OPACITY } from 'app/components/Button'
-import { Icon } from './Icon'
+import { Icon } from 'app/components/Icon'
 
 interface IDrawerProps {
   visible: boolean
@@ -42,8 +42,14 @@ export const Drawer = (props: IDrawerProps) => {
 
   return (
     <Modal visible={visible} transparent onRequestClose={onCloseFunction} style={{ position: 'relative' }}>
-      <View style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }} className="flex flex-1 w-screen h-screen absolute -z-10" />
-      <OutsidePressHandler style={{ height: '100%', width: '85%', maxWidth }} disabled={false} onOutsidePress={onCloseFunction}>
+      <View
+        style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+        className="flex flex-1 w-screen h-screen absolute -z-10"
+      />
+      <OutsidePressHandler
+        style={{ height: '100%', width: '85%', maxWidth }}
+        disabled={false} onOutsidePress={onCloseFunction}
+      >
         <MotiView
           animate={{
             opacity: showAnimation ? 1 : 0,
