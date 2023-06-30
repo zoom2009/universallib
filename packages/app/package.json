@@ -12,6 +12,7 @@
     "react-native-awesome-alerts": "^2.0.0",
     "react-native-dropdown-select-list": "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git",
     "react-native-mask-text": "^0.14.1",
+    "react-native-outside-press": "^1.1.0",
     "react-native-svg-charts": "^5.4.0",
     "react-native-table-component": "^1.2.2",
     "react-native-walkthrough-tooltip": "^1.5.0",

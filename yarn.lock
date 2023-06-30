@@ -4369,6 +4369,7 @@ __metadata:
     react-native-awesome-alerts: ^2.0.0
     react-native-dropdown-select-list: "git+https://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:x-oauth-basic@github.com/zoom2009/react-native-dropdown-select-list.git"
     react-native-mask-text: ^0.14.1
+    react-native-outside-press: ^1.1.0
     react-native-svg-charts: ^5.4.0
     react-native-table-component: ^1.2.2
     react-native-walkthrough-tooltip: ^1.5.0
@@ -12458,6 +12459,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 1c12bff2ee1aab6e8eb38379bbf26085cea853397a1f0d3401e5199b164ce91ab054073d8c0d12a622cf03f48860e06ee858c879bc537bef0c02f197e603bfe4
+  languageName: node
+  linkType: hard
+
+"react-native-outside-press@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "react-native-outside-press@npm:1.1.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: c88c6276cdb2ee4ca3a6d9130bf6c327b3b76b2636e01116fe23476a1d50a5efbf5d43a40c6de1947ac396a0a0969d83c632290f662904e336a5aedb8c35c6ec
   languageName: node
   linkType: hard
 

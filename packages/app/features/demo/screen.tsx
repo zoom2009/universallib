@@ -32,6 +32,8 @@ import { FullModal } from "app/components/FullModal"
 import { ThaiAddressAutoComplete } from "app/components/ThaiAddressAutoComplete"
 import { getPositionView, scrollTo } from "app/functions/scrollTo/index"
 import { LoadingSpinnerOverlay } from "app/components/LoadingSpinnerOverlay"
+import { Drawer } from "app/components/Drawer"
+import { OutsidePressHandlerProvider } from "app/components/OutsidePressHandler"
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -42,6 +44,7 @@ const _DemoScreen = () => {
   const [isShowPopover, setIsShowPopover] = useState(false)
   const [isShowModal, setIsShowModal] = useState(false)
   const [isShowLoading, setIsShowLoading] = useState(false)
+  const [isShowDrawer, setIsShowDrawer] = useState(false)
   const [bottomPos, setBottomPos] = useState({ x: 0, y: 0 })
 
   const chartData = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
@@ -61,6 +64,13 @@ const _DemoScreen = () => {
       <View className="bg-info-background flex flex-1">
         <View className="mx-auto flex flex-1 flex-col item-center">
           <LoadingSpinnerOverlay visible={isShowLoading} />
+          <Drawer
+            withClose
+            visible={isShowDrawer}
+            onClose={() => setIsShowDrawer(false)}
+          >
+            <Text>Hello</Text>
+          </Drawer>
           <FullModal
             visible={isShowModal}
             onClose={() => setIsShowModal(false)}
@@ -246,9 +256,9 @@ const _DemoScreen = () => {
             </Accordion>
             <View className="h-8" />
             <Button
-              onPress={() => {}}
+              onPress={() => setIsShowDrawer(true)}
               type="danger-outline"
-              text="Outline Danger Button"
+              text="<Show Drawer> Outline Danger Button"
               bold
               LeftIcon={<Icon.Alien size={30} color="green" />}
             />
@@ -590,7 +600,9 @@ const _DemoScreen = () => {
 export const DemoScreen = () => (
   <GestureHandlerRootView>
     <ToastRootProvider>
-      <_DemoScreen />
+      <OutsidePressHandlerProvider>
+        <_DemoScreen />
+      </OutsidePressHandlerProvider>
     </ToastRootProvider>
   </GestureHandlerRootView>
 )
