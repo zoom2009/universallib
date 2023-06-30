@@ -16,7 +16,7 @@ interface ICameraPickerProps {
 const isSSR = () => typeof window === 'undefined'
 
 export const CameraPicker = (props: ICameraPickerProps) => {
-  const { 
+  const {
     isShowCamera = true,
     onClose,
     onChangeEffect,
