@@ -5,6 +5,7 @@ import { Icon } from 'app/components/Icon'
 import { CameraCapturedPicture } from 'expo-camera'
 import { ACTIVE_OPACITY, Button } from 'app/components/Button'
 import theme from 'app/global/theme'
+import { getInsets } from 'app/functions/getInsets'
 
 interface ICameraPickerProps {
   isShowCamera: boolean
@@ -21,8 +22,9 @@ export const CameraPicker = (props: ICameraPickerProps) => {
     onChangeEffect,
   } = props
 
+  const insets = getInsets()
   const { width } = useWindowDimensions()
-  const height = Math.round((width * 4) / 3)
+  const height = Math.round((width * 4) / 3) - (insets.top + insets.bottom)
 
   type CameraModuleType = typeof import('expo-camera')
   const CameraModule: CameraModuleType = !isSSR() ? require('expo-camera') : undefined
