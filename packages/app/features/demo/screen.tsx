@@ -559,8 +559,10 @@ const _DemoScreen = () => {
             <View className="h-8" />
             <View
               onLayout={(e) => {
-                const { x, y } = getPositionView(e)
-                setBottomPos({ x, y })
+                if (bottomPos.y === 0) {
+                  const { x, y } = getPositionView(e)
+                  setBottomPos({ x, y })
+                }
               }}
               className="bg-white pb-6 px-10 flex flex-row"
             >

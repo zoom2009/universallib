@@ -41,7 +41,7 @@ export const Dropdown = (props: IDropdownProps) => {
     placeholder = 'พิมพ์เพื่อค้นหา',
   } = props
 
-  const [isReady, setIsReady] = useState(false)
+  const [isReady, setIsReady] = useState(true)
   const [isFocus, setIsFocus] = useState(false)
 
   const onChangeEffectFunction = (key: string) => {
@@ -79,6 +79,7 @@ export const Dropdown = (props: IDropdownProps) => {
         inputStyles={Platform.OS === 'web' ? { outlineStyle: 'none' } : {}}
         boxStyles={{
           borderRadius: 8,
+          paddingVertical: 14,
           borderColor: !isFocus ? '#555' : theme.colors.info,
           alignItems: 'center',
         }}
