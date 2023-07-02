@@ -116,7 +116,7 @@ export const CameraPicker = (props: ICameraPickerProps) => {
         {hasCameraPermission && !picture && !isSSR() && (
         <CameraModule.Camera
           ratio={radio}
-          style={{ flex: 1, width, height }}
+          style={{ flex: 1, width, height: height - 100, justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }}
           type={cameraType}
           onCameraReady={prepareRatio}
           ref={cameraRef}

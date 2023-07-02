@@ -24,14 +24,16 @@ export const Drawer = (props: IDrawerProps) => {
     withClose = false,
   } = props
 
-  const duration = 350
+  const duration = 250
   const maxWidth = 400
   const [showAnimation, setShowAnimation] = useState(false)
   const insets = getInsets()
 
   useEffect(() => {
     if (visible) {
-      setShowAnimation(true)
+      setTimeout(() => {
+        setShowAnimation(true)
+      }, 100)
     }
   }, [visible])
 
