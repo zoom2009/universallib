@@ -33,7 +33,7 @@ export const Drawer = (props: IDrawerProps) => {
     if (visible) {
       setTimeout(() => {
         setShowAnimation(true)
-      }, 100)
+      }, 50)
     }
   }, [visible])
 
