@@ -39,6 +39,9 @@
         {
           "android": {
             "kotlinVersion": "1.6.10"
+          },
+          "ios": {
+            "flipper": true
           }
         }
       ]
