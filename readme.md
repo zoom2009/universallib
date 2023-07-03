@@ -3,7 +3,7 @@
 ## Platform Support & Resposive
   - Resposive support
   - SSR
-  - React Native (EXPO) <android, ios>
+  - React Native (EXPO) <Android, IOS>
   - Next JS
 
 ## Step to clone and use this
