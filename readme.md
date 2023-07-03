@@ -22,12 +22,31 @@
       end
     end
     ```
-  - remove `expo/eas.json` file
-  - remove `extra.eas.projectId` at `expo/app.json` file
-  - run script `eas build:configure` at `expo/`
+  - remove `app/expo/eas.json` file
+  - remove `extra.eas.projectId` at `app/expo/app.json` file
+  - run script `eas build:configure` at `app/expo/`
   - run script `pod install` at `expo/ios`
 
 ## How to run project
   - go root path
   - run script `yarn web` for run next js
   - run script `yarn native` for run ios
+
+## How to debug
+  - use `Fbflipper application`
+
+## How to build & deploy
+  - Android & IOS
+    - run script `eas build` at `app/expo/`
+    - run script `eas submit` at `app/expo/`
+  - Next JS
+    - run script `yarn build` at `app/next/`
+    - push to versel or copy next `build` folder to your server
+   
+## How to add some package
+  - React Native
+    - run script `yarn add <package-name>` at `app/expo/`
+  - Next JS
+    - run script `yarn add <package-name>` at `app/next/`
+  - Both (React Native & Next JS)
+    -  run script `yarn add <package-name>` at `package/app/`
