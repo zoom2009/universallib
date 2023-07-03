@@ -1,4 +1,9 @@
 # Originally, It's is solito-lib. This repo create for universal lib
+  - Many Components (Layout, Form Input, Skeleton, Spinner Overlay, Camera, Image Picker, Cache Image, Map, Animation, Alert, Modal, Toast, etc.)
+  - tailwind className base
+  - tailwind resposive classname `sm, md, lg, xl, 2xl`
+  - Logics & Validate function
+  - Theme
 
 ## Platform Support & Resposive
   - Resposive support
