@@ -60,3 +60,7 @@
    
 ## More INFO
   - https://solito.dev
+
+## Check-out Demo Screen for example
+> demo video
+  https://youtu.be/D8QucYNgXYw
