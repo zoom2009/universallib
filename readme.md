@@ -6,7 +6,7 @@
   - React Native (EXPO) <Android, IOS>
   - Next JS
 
-## Step to clone and use this
+## Step to SETUP
   - git clone <this repo> <project name>
   - replace all text from `universallib` to `<project name>`
   - add this code in Podfile
