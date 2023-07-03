@@ -1,5 +1,5 @@
 # Originally, It's is solito-lib. This repo create for universal lib
-  - Many Components (Layout, Form Input, Skeleton, Spinner Overlay, Camera, Image Picker, Cache Image, Map, Animation, Alert, Modal, Toast, etc.)
+  - Many Components (Layout, Form Input, Skeleton, Spinner Overlay, Camera, Image Picker, Cache Image, Map, Animation, Alert, Modal, Toast, etc.) (Take a look all provided components at package/app/components)
   - tailwind className base
   - tailwind resposive className `sm, md, lg, xl, 2xl`
   - Logics & Validate function
@@ -55,3 +55,6 @@
     - run script `yarn add <package-name>` at `app/next/`
   - Both (React Native & Next JS)
     -  run script `yarn add <package-name>` at `package/app/`
+   
+## More INFO
+  - https://solito.dev
