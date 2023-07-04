@@ -62,7 +62,9 @@
   - https://solito.dev
 
 ## Check-out Demo Screen for example
+
 > demo video
   https://youtu.be/D8QucYNgXYw
+
 > demo web
   https://universallib-next.vercel.app
