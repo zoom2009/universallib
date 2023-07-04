@@ -18,7 +18,7 @@
   - replace all text from `universallib` to `<project name>`
   - add this code in Podfile
     ```
-    use_flipper!({ 'Flipper'=> '0.135.0' })
+    use_flipper!({ 'Flipper'=> '0.135.0' }) // may be this version not work, You can fix error by follow error message.
 
     installer.target_installation_results.pod_target_installation_results
       .each do |pod_name, target_installation_result|
@@ -40,7 +40,7 @@
   - run script `yarn native` for run ios
 
 ## How to debug
-  - use `Fbflipper application`
+  - use `Fbflipper` application => https://fbflipper.com/
 
 ## How to build & deploy
   - Android & IOS
