@@ -21,6 +21,7 @@
   },
   "sideEffects": false,
   "devDependencies": {
+    "@types/ramda": "^0.29.3",
     "@types/react-native-svg-charts": "^5.0.12",
     "@types/react-native-table-component": "^1.2.4"
   }

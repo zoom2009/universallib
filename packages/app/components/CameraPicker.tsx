@@ -46,6 +46,7 @@ export const CameraPicker = (props: ICameraPickerProps) => {
     if (Platform.OS === 'android') {
       const DESIRED_RATIO = '16:9'
       const ratios = await cameraRef.current.getSupportedRatiosAsync()
+      // @ts-ignore
       const ratio = ratios.find((ratio) => ratio === DESIRED_RATIO) || ratios[ratios.length - 1];
       setRadio(ratio)
     }
@@ -150,7 +151,7 @@ export const CameraPicker = (props: ICameraPickerProps) => {
             <TouchableOpacity
               style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}
               className="mx-auto w-48 py-1.5 rounded-full justify-center items-center"
-              activeOpacity={global.activeOpacity}
+              activeOpacity={ACTIVE_OPACITY}
               onPress={onTakePicture}
             >
               <View className="bg-black p-4 rounded-full">

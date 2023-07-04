@@ -1,5 +1,6 @@
 import * as R from 'ramda'
 import { View } from "app/components/ComponentWithTailwind"
+// @ts-ignore
 import ThaiAddress from 'react-thai-address'
 import { useState } from 'react'
 import { Dropdown } from 'app/components/Dropdown'
@@ -151,7 +152,7 @@ export const ThaiAddressAutoComplete = (props: IThaiAddressAutoCompleteProps) =>
           label="ที่อยู่"
           required
           placeholder="บ้านเลขที่ / หมู่บ้าน / ถนน / ซอย"
-          value={R.path(['address'], currentState)}
+          value={R.path(['address'], currentState) as string}
           onChangeEffect={onChangeAddress}
           errorMessage={errors.address}
         />
@@ -162,7 +163,7 @@ export const ThaiAddressAutoComplete = (props: IThaiAddressAutoCompleteProps) =>
               label="ตำบล / แขวง"
               addressField="subDistrict"
               onSelect={onSelect}
-              value={R.path(['subDistrict'], currentState)}
+              value={R.path(['subDistrict'], currentState) as { key: string, value: string }}
               placeholder="พิมพ์เพื่อค้นหา"
               erorrMessage={errors.subDistrict}
             />
@@ -173,7 +174,7 @@ export const ThaiAddressAutoComplete = (props: IThaiAddressAutoCompleteProps) =>
               label="เขต / อำเภอ"
               addressField="district"
               onSelect={onSelect}
-              value={R.path(['district'], currentState)}
+              value={R.path(['district'], currentState) as { key: string, value: string }}
               placeholder="พิมพ์เพื่อค้นหา"
               erorrMessage={errors.district}
             />
@@ -186,7 +187,7 @@ export const ThaiAddressAutoComplete = (props: IThaiAddressAutoCompleteProps) =>
               label="จังหวัด"
               addressField="province"
               onSelect={onSelect}
-              value={R.path(['province'], currentState)}
+              value={R.path(['province'], currentState) as { key: string, value: string }}
               placeholder="พิมพ์เพื่อค้นหา"
               erorrMessage={errors.province}
             />
@@ -197,7 +198,7 @@ export const ThaiAddressAutoComplete = (props: IThaiAddressAutoCompleteProps) =>
               label="รหัสไปรษณีย์"
               addressField="zipcode"
               onSelect={onSelect}
-              value={R.path(['zipcode'], currentState)}
+              value={R.path(['zipcode'], currentState) as { key: string, value: string }}
               placeholder="พิมพ์เพื่อค้นหา"
               erorrMessage={errors.zipcode}
             />

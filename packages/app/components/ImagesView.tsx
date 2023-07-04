@@ -114,6 +114,7 @@ export const ImagesView = (props: IImagesViewProps) => {
         enabled={Platform.OS !== 'web'}
         scrollAnimationDuration={1000}
         onSnapToItem={setCurrentIndex}
+        // @ts-ignore
         renderItem={({ item }) => (
           <View style={{ backgroundColor }} className="w-full h-full justify-center items-center rounded-xl px-4 pt-4 pb-6">
             <Pinchable>
