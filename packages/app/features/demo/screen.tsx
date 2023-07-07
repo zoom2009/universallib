@@ -36,6 +36,7 @@ import { Drawer } from "app/components/Drawer"
 import { OutsidePressHandlerProvider } from "app/components/OutsidePressHandler"
 import { Lottie } from "app/components/Lottie"
 import { WithState } from "app/components/WithState"
+import { Video, VideoResizeMode } from "app/components/Video"
 
 const _DemoScreen = () => {
   const insets = getInsets()
@@ -204,6 +205,18 @@ const _DemoScreen = () => {
                 </Layout.Wrapper>
               </View>
             </View>
+            <View className="h-8" />
+            <Label bold>Video</Label>
+            <View className="h-4" />
+            <Video
+              videoStyle={{ height: 300, width: 300 }}
+              style={{ height: 300, width: 300, backgroundColor: '#ccc', justifyContent: 'center', alignItems: 'center' }}
+              source={{ uri: 'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+              useNativeControls
+              resizeMode={VideoResizeMode.CONTAIN as any}
+              isLooping
+              onPlaybackStatusUpdate={status => console.log('status:', status)}
+            />
             <View className="h-8" />
             <Label bold>All image include cache & placeholder.</Label>
             <View className="h-4" />
